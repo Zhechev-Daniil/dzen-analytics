@@ -7,7 +7,7 @@
       "title": "90% маркетологов используют ИИ неправильно. Я 3 года смотрю, как они повторяют одну и ту же ошибку",
       "type": "article",
       "pub_date": "2026-05-04",
-      "impressions": 1,
+      "impressions": 3,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -25,7 +25,7 @@
       "title": "Почему нейросеть не знает ваш бизнес — и что с этим делать",
       "type": "article",
       "pub_date": "2026-04-30",
-      "impressions": 10,
+      "impressions": 13,
       "opens": 1,
       "deep_views": 0,
       "video_views": 0,
@@ -44,7 +44,7 @@
       "type": "gif",
       "pub_date": "2026-04-30",
       "impressions": 15,
-      "opens": 4,
+      "opens": 7,
       "deep_views": 2,
       "video_views": 3,
       "subscriptions": 0,
@@ -61,7 +61,7 @@
       "title": "От анализа конкурентов к контент-плану за 3 часа: пошаговая схема",
       "type": "article",
       "pub_date": "2026-04-20",
-      "impressions": 92,
+      "impressions": 95,
       "opens": 11,
       "deep_views": 1,
       "video_views": 1,
@@ -70,7 +70,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 6.52,
+      "ctr": 6.32,
       "deep_rate": 10
     },
     {
@@ -79,7 +79,7 @@
       "title": "Как проанализировать ЦА за 2 дня вместо 2 недель: схема с ИИ",
       "type": "article",
       "pub_date": "2026-04-19",
-      "impressions": 72,
+      "impressions": 75,
       "opens": 8,
       "deep_views": 1,
       "video_views": 1,
@@ -88,7 +88,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 2.78,
+      "ctr": 2.67,
       "deep_rate": 16.67
     },
     {
@@ -97,7 +97,7 @@
       "title": "Чек-лист хорошего промпта: 10 признаков, которые отличают рабочий запрос от слабого",
       "type": "article",
       "pub_date": "2026-04-18",
-      "impressions": 69,
+      "impressions": 70,
       "opens": 8,
       "deep_views": 2,
       "video_views": 2,
@@ -106,7 +106,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 1.2,
-      "ctr": 2.9,
+      "ctr": 2.86,
       "deep_rate": 28.57
     },
     {
@@ -277,7 +277,7 @@
       "title": "Как настроить ИИ-агента один раз и анализировать конкурентов за 5 минут",
       "type": "article",
       "pub_date": "2026-04-15",
-      "impressions": 63,
+      "impressions": 65,
       "opens": 12,
       "deep_views": 5,
       "video_views": 5,
@@ -286,7 +286,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 5.3,
-      "ctr": 1.59,
+      "ctr": 1.54,
       "deep_rate": 50
     },
     {
@@ -332,7 +332,7 @@
       "type": "article",
       "pub_date": "2026-04-13",
       "impressions": 56,
-      "opens": 9,
+      "opens": 12,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -350,7 +350,7 @@
       "type": "article",
       "pub_date": "2026-04-12",
       "impressions": 46,
-      "opens": 6,
+      "opens": 10,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -789,8 +789,8 @@
     },
     {
       "date": "2026-05-04",
-      "impressions": 3,
-      "opens": 1,
+      "impressions": 17,
+      "opens": 11,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -944,5 +944,97 @@
       "subscribers": 23,
       "diff": 0
     }
-  ]
+  ],
+  "pub_history": {
+    "69f8962e1172e554b92d3bbe": [
+      {
+        "date": "2026-05-05",
+        "impressions": 2,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69f3479e44c9f40182de3d68": [
+      {
+        "date": "2026-05-05",
+        "impressions": 3,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69f32f876c96204aceb32dbb": [
+      {
+        "date": "2026-05-05",
+        "impressions": 0,
+        "opens": 3,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69e5e294720368291496c7b3": [
+      {
+        "date": "2026-05-05",
+        "impressions": 3,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69e21c9ca049d744bba66183": [
+      {
+        "date": "2026-05-05",
+        "impressions": 3,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69e211ed0588e06d11b0fdba": [
+      {
+        "date": "2026-05-05",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69de0b84d698251a58a64ac5": [
+      {
+        "date": "2026-05-05",
+        "impressions": 2,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69d8de77ddcf6236004d848b": [
+      {
+        "date": "2026-05-05",
+        "impressions": 0,
+        "opens": 3,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69d8cf598f164c75fadda0c1": [
+      {
+        "date": "2026-05-05",
+        "impressions": 0,
+        "opens": 4,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ]
+  }
 }
