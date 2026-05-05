@@ -21,11 +21,11 @@ EXCEL_PATH    = SCRIPT_DIR / "dzen_analytics.xlsx"
 
 
 JS_EXTRACTOR = """
-async function collectDzenStats() {
+async (publisherId) => {
   const csrf = window._csrfToken;
   if (!csrf) throw new Error('No CSRF token');
   const headers = {'X-CSRF-Token': csrf};
-  const base = 'https://dzen.ru/editor-api/v2/publisher/' + arguments[0];
+  const base = 'https://dzen.ru/editor-api/v2/publisher/' + publisherId;
 
   const [statsResp, dailyResp, subResp] = await Promise.all([
     fetch(base + '/stats2?allPublications=true&fields=typeSpecificViews&fields=deepViewsRate&fields=ctr&fields=shares&fields=comments&fields=subscriptions&fields=likes&fields=impressions&fields=deepViews&fields=sumInvolvedViewTimeSec&fields=pageViews&groupBy=flight&sortBy=addTime&sortOrderDesc=true&total=true&pageSize=100&page=0&clid=320', {headers}),
@@ -78,7 +78,6 @@ async function collectDzenStats() {
     }
   });
 }
-return await collectDzenStats(arguments[0]);
 """
 
 
