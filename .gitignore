@@ -1,0 +1,13 @@
+# Куки сессии — никогда не коммитить!
+dzen_cookies.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СОЗИДАЙ — Дзен Аналитика</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-from:#0d2a4a; --bg-mid:#0a3d4f; --bg-to:#0e5c6b;
+  --glass:rgba(255,255,255,0.10); --glass-h:rgba(255,255,255,0.15);
+  --glass-b:rgba(255,255,255,0.22); --glass-b2:rgba(255,255,255,0.10);
+  --text:#ffffff; --text2:rgba(255,255,255,0.75); --text3:rgba(255,255,255,0.45);
+  --cyan:#4ecdc4; --cyan2:#26e5d8;
+  --blue:#5b9cf6; --violet:#9b89f5; --green:#6bdfb0;
+  --yellow:#f7d070; --red:#ff6b8a; --orange:#ffaa5e; --teal:#2cc8c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{min-height:100%;}
+body{
+  background:linear-gradient(145deg,var(--bg-from) 0%,var(--bg-mid) 45%,var(--bg-to) 100%);
+  min-height:100vh; color:var(--text);
+  font-family:'DM Sans',sans-serif; font-size:13px;
+}
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px;
+}
+body::after{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 10%,rgba(78,205,196,0.12) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%,rgba(91,156,246,0.12) 0%,transparent 70%);
+}
+/* HEADER */
+.page-header{position:relative;z-index:2;text-align:center;padding:32px 32px 20px;}
+.page-title{font-size:28px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:#fff;text-shadow:0 2px 24px rgba(78,205,196,0.3);line-height:1.15;margin-bottom:4px;}
+.page-sub{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-top:6px;}
+/* TOP BAR */
+.top-bar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px 12px;flex-wrap:wrap;gap:12px;}
+.top-bar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+/* GLASS PANEL */
+.glass-panel{position:relative;z-index:2;margin:0 20px 20px;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);
+  border-radius:24px;padding:18px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 8px 40px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.14);}
+/* TABS */
+.tabs{display:flex;gap:4px;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:4px;width:fit-content;}
+.tab{padding:8px 22px;border-radius:50px;cursor:pointer;font-size:12px;font-weight:600;
+  letter-spacing:0.5px;color:var(--text3);transition:all .2s;white-space:nowrap;}
+.tab:hover{color:var(--text2);}
+.tab.active{background:rgba(255,255,255,0.18);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.15);}
+/* SECTIONS */
+.section{display:none;}
+.section.active{display:block;}
+/* FILTER ROW */
+.filter-row{display:flex;gap:6px;margin-bottom:14px;align-items:center;flex-wrap:wrap;}
+.filter-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-right:4px;}
+.filter-btn{padding:5px 14px;border-radius:50px;border:1px solid rgba(255,255,255,0.15);
+  background:transparent;color:var(--text3);cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;transition:all .2s;}
+.filter-btn:hover{background:rgba(255,255,255,0.08);color:var(--text2);}
+.filter-btn.active{background:rgba(78,205,196,0.2);border-color:rgba(78,205,196,0.5);color:var(--cyan2);}
+/* DATE RANGE */
+.date-range-row{display:none;align-items:center;gap:10px;margin-bottom:14px;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+  border-radius:14px;padding:10px 16px;flex-wrap:wrap;backdrop-filter:blur(10px);}
+.date-range-row.visible{display:flex;}
+.date-range-row label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);}
+.date-input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
+  border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;
+  font-size:12px;padding:6px 12px;outline:none;transition:border-color .2s;cursor:pointer;}
+.date-input:focus{border-color:rgba(78,205,196,0.6);}
+.date-input::-webkit-calendar-picker-indicator{filter:invert(0.8);cursor:pointer;}
+.date-sep{color:var(--text3);font-size:13px;}
+.apply-btn{background:rgba(78,205,196,0.2);border:1px solid rgba(78,205,196,0.5);
+  border-radius:50px;color:var(--cyan2);font-family:'DM Sans',sans-serif;
+  font-size:11px;font-weight:600;padding:6px 18px;cursor:pointer;transition:all .2s;}
+.apply-btn:hover{background:rgba(78,205,196,0.3);}
+.range-summary{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:5px 12px;font-size:11px;color:var(--text3);
+  display:flex;align-items:center;gap:8px;}
+.range-summary strong{color:var(--cyan2);}
+.range-clear{background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px;}
+.range-clear:hover{color:var(--red);}
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin-bottom:14px;}
+.kpi{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.20);
+  border-radius:18px;padding:20px 18px 16px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 4px 20px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.18);
+  position:relative;overflow:hidden;}
+.kpi::before{content:'';position:absolute;top:-40px;right:-40px;width:100px;height:100px;
+  border-radius:50%;background:radial-gradient(circle,var(--kpi-glow,rgba(78,205,196,0.18)) 0%,transparent 70%);
+  pointer-events:none;}
+.kpi:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.18),inset 0 1px 0 rgba(255,255,255,0.22);}
+.kpi-label{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.kpi-value{font-size:28px;font-weight:700;color:#fff;line-height:1;margin-bottom:6px;font-feature-settings:"tnum";}
+.kpi-sub{font-size:10px;color:var(--text3);line-height:1.3;}
+.kpi-conv{font-size:10px;color:var(--kpi-accent,var(--cyan2));margin-top:4px;font-weight:500;}
+/* CHARTS */
+.chart-grid  {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.chart-grid-3{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-bottom:10px;}
+.chart-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);
+  border-radius:18px;padding:18px 18px 14px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 4px 20px rgba(0,0,0,0.1),inset 0 1px 0 rgba(255,255,255,0.10);transition:background .2s;}
+.chart-box:hover{background:rgba(255,255,255,0.11);}
+.chart-box.full{grid-column:1/-1;}
+.chart-title{font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--text2);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
+.chart-title small{font-size:9px;font-weight:400;color:var(--text3);letter-spacing:.5px;text-transform:none;}
+canvas{max-height:220px;}
+/* SEARCH */
+.search-row{display:flex;gap:12px;margin-bottom:10px;align-items:center;flex-wrap:wrap;}
+.search-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  border-radius:50px;color:var(--text);font-family:'DM Sans',sans-serif;
+  font-size:13px;padding:9px 18px;flex:1;max-width:360px;outline:none;transition:all .2s;}
+.search-box:focus{border-color:rgba(78,205,196,0.5);background:rgba(255,255,255,0.12);}
+.search-box::placeholder{color:var(--text3);}
+.pub-count{font-size:10px;letter-spacing:1px;color:var(--text3);text-transform:uppercase;}
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:14px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+th{background:rgba(255,255,255,0.07);color:var(--text3);padding:11px 13px;
+  text-align:left;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  cursor:pointer;user-select:none;border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;top:0;white-space:nowrap;transition:color .2s;backdrop-filter:blur(10px);}
+th:hover{color:var(--text2);}
+.sort-icon{margin-left:4px;opacity:.3;font-style:normal;}
+th.asc  .sort-icon::after{content:'↑';opacity:1;color:var(--cyan2);}
+th.desc .sort-icon::after{content:'↓';opacity:1;color:var(--cyan2);}
+th:not(.asc):not(.desc) .sort-icon::after{content:'↕';}
+td{padding:10px 13px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;color:var(--text2);}
+tr:hover td{background:rgba(255,255,255,0.04);}
+.pub-title{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pub-title a{color:var(--cyan2);text-decoration:none;}
+.pub-title a:hover{color:#fff;text-decoration:underline;}
+.badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
+.badge-article{background:rgba(78,205,196,0.15);color:var(--cyan2);border:1px solid rgba(78,205,196,0.25);}
+.badge-gif    {background:rgba(155,137,245,0.15);color:var(--violet);border:1px solid rgba(155,137,245,0.25);}
+.badge-video  {background:rgba(107,223,176,0.15);color:var(--green);border:1px solid rgba(107,223,176,0.25);}
+.num{text-align:right;font-family:'DM Mono',monospace;font-size:11px;font-variant-numeric:tabular-nums;color:var(--text);}
+.bar-cell{min-width:80px;}
+.mini-bar{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));display:inline-block;vertical-align:middle;}
+.pct-good{color:var(--green);}
+.pct-mid {color:var(--yellow);}
+.pct-low {color:var(--text3);}
+/* TOP10 */
+.top10-table{width:100%;border-collapse:collapse;font-size:12px;}
+.top10-table th{background:rgba(255,255,255,0.06);color:var(--text3);padding:10px 13px;
+  font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  text-align:left;border-bottom:1px solid rgba(255,255,255,0.08);}
+.top10-table td{padding:10px 13px;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle;}
+.top10-table tr:hover td{background:rgba(255,255,255,0.04);}
+.top10-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);width:30px;}
+.top10-title a{color:var(--cyan2);text-decoration:none;font-size:12px;font-weight:500;}
+.top10-title a:hover{color:#fff;text-decoration:underline;}
+.top10-title span{color:var(--text2);font-size:12px;}
+.top10-bar-cell{width:180px;}
+.top10-bar-wrap{display:flex;align-items:center;gap:10px;}
+.top10-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--cyan),var(--blue));min-width:2px;}
+.top10-val{font-family:'DM Mono',monospace;font-size:11px;color:var(--text);min-width:50px;text-align:right;}
+/* BUTTONS */
+.btn-glass{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;
+  border:1px solid rgba(255,255,255,0.20);background:rgba(255,255,255,0.08);color:var(--text2);
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;
+  transition:all .2s;backdrop-filter:blur(8px);}
+.btn-glass:hover{background:rgba(255,255,255,0.16);color:#fff;border-color:rgba(255,255,255,0.35);}
+.btn-glass-accent{background:rgba(78,205,196,0.18);border-color:rgba(78,205,196,0.45);color:var(--cyan2);}
+.btn-glass-accent:hover{background:rgba(78,205,196,0.28);color:#fff;}
+.sys-status{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--text3);}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 8px var(--green);animation:pulse 2.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:rgba(255,255,255,0.03);border-radius:3px;}
+::-webkit-scrollbar-thumb{background:rgba(78,205,196,0.25);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(78,205,196,0.45);}
+@media(max-width:900px){
+  .chart-grid,.chart-grid-3{grid-template-columns:1fr;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .glass-panel{margin:0 10px 14px;padding:12px;}
+  .page-title{font-size:20px;}
+}
+/* ── PUB EXPAND ROW ── */
+.pub-data-row{cursor:pointer;}
+.pub-data-row:hover td{background:rgba(78,205,196,0.06)!important;}
+.pub-data-row.expanded td{background:rgba(78,205,196,0.05)!important;border-bottom:none!important;}
+.pub-chevron{display:inline-block;width:14px;font-size:9px;margin-right:4px;color:var(--cyan2);opacity:.55;vertical-align:middle;transition:transform .18s;line-height:1;}
+.pub-expand-row{display:none;}
+.pub-expand-row.open{display:table-row;}
+.pub-expand-td{padding:0 6px 10px!important;border-bottom:1px solid rgba(255,255,255,0.05)!important;}
+.pub-expand-inner{background:rgba(78,205,196,0.04);border:1px solid rgba(78,205,196,0.12);border-radius:12px;padding:12px 14px;display:grid;grid-template-columns:90px 1fr 1fr;gap:12px;align-items:start;}
+.pub-expand-kpis{display:flex;flex-direction:column;gap:5px;}
+.pub-expand-kpi{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:6px 8px;text-align:center;}
+.pub-expand-kpi-val{font-size:15px;font-weight:700;font-family:'DM Mono',monospace;line-height:1.15;}
+.pub-expand-kpi-lbl{font-size:8px;letter-spacing:.9px;text-transform:uppercase;color:var(--text3);margin-top:1px;}
+.pub-expand-chart-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:10px 12px;}
+.pub-expand-chart-title{font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+@media(max-width:900px){.pub-expand-inner{grid-template-columns:1fr;}}
+.pub-expand-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;color:var(--text3);}
+.pub-expand-placeholder .ph-icon{font-size:24px;opacity:.35;}
+.pub-expand-placeholder .ph-text{font-size:11px;line-height:1.5;}
+.pub-expand-placeholder .ph-sub{font-size:10px;opacity:.55;}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-title">СОЗИДАЙ — ДЗЕН АНАЛИТИКА</div>
+  <div class="page-sub">Система мониторинга публикаций</div>
+</div>
+
+<div class="top-bar">
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('overview',this)">Обзор</div>
+    <div class="tab" onclick="switchTab('publications',this)">Публикации</div>
+    <div class="tab" onclick="switchTab('dynamics',this)">Динамика</div>
+  </div>
+  <div class="top-bar-right">
+    <div class="sys-status">
+      <div class="status-dot"></div>
+      <span id="updatedAt">Обновлено: —</span>
+    </div>
+    <a href="dzen_analytics.xlsx" class="btn-glass">↓ Excel</a>
+    <a href="https://dzen.ru/profile/editor/id/69cd140eea571e1d07752e89/publications-stat" target="_blank" class="btn-glass btn-glass-accent">Открыть Дзен ↗</a>
+  </div>
+</div>
+
+<div class="glass-panel">
+
+<!-- ══ ОБЗОР ══ -->
+<div class="section active" id="tab-overview">
+  <div class="filter-row">
+    <span class="filter-label">Период:</span>
+    <button class="filter-btn" onclick="setOvRange(7,this)">7 дней</button>
+    <button class="filter-btn" onclick="setOvRange(14,this)">14 дней</button>
+    <button class="filter-btn active" onclick="setOvRange(28,this)">28 дней</button>
+    <button class="filter-btn" onclick="setOvRange(0,this)">Всё время</button>
+    <button class="filter-btn" id="btnOvCustom" onclick="toggleOvCustom(this)">Свой период</button>
+  </div>
+  <div class="date-range-row" id="ovRangeRow">
+    <label>С:</label><input type="date" class="date-input" id="ovDateFromInput">
+    <span class="date-sep">—</span>
+    <label>По:</label><input type="date" class="date-input" id="ovDateToInput">
+    <button class="apply-btn" onclick="applyOvRange()">Применить</button>
+    <div class="range-summary" id="ovRangeSummary" style="display:none">
+      Выбрано: <strong id="ovRangeSummaryText"></strong>
+      <button class="range-clear" onclick="clearOvRange()">✕</button>
+    </div>
+  </div>
+  <div class="kpi-grid" id="kpiGrid"></div>
+  <div class="chart-grid-3">
+    <div class="chart-box">
+      <div class="chart-title">Показы · Открытия · Дочитывания <small id="ovChartLabel"></small></div>
+      <canvas id="chartDailyLine"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Рост подписчиков</div>
+      <canvas id="chartSubs"></canvas>
+    </div>
+  </div>
+  <div class="chart-box full" style="margin-bottom:10px;">
+    <div class="chart-title">Топ-10 статей по показам</div>
+    <div id="top10Wrap"></div>
+  </div>
+</div>
+
+<!-- ══ ПУБЛИКАЦИИ ══ -->
+<div class="section" id="tab-publications">
+  <div class="search-row">
+    <input type="text" class="search-box" id="searchBox" placeholder="Поиск по названию..." oninput="filterTable()">
+    <span class="pub-count" id="pubCountLabel"></span>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">Дата публикации:</span>
+    <button class="filter-btn active" onclick="setPubDateFilter('all',this)">Все</button>
+    <button class="filter-btn" onclick="setPubDateFilter('7',this)">7 дней</button>
+    <button class="filter-btn" onclick="setPubDateFilter('14',this)">14 дней</button>
+    <button class="filter-btn" onclick="setPubDateFilter('30',this)">30 дней</button>
+    <button class="filter-btn" id="btnPubCustom" onclick="togglePubCustom(this)">Свой период</button>
+  </div>
+  <div class="date-range-row" id="pubRangeRow">
+    <label>С:</label><input type="date" class="date-input" id="pubDateFromInput">
+    <span class="date-sep">—</span>
+    <label>По:</label><input type="date" class="date-input" id="pubDateToInput">
+    <button class="apply-btn" onclick="applyPubRange()">Применить</button>
+    <div class="range-summary" id="pubRangeSummary" style="display:none">
+      Выбрано: <strong id="pubRangeSummaryText"></strong>
+      <button class="range-clear" onclick="clearPubRange()">✕</button>
+    </div>
+  </div>
+  <div class="chart-box" style="padding:0;overflow:hidden;">
+    <div class="table-wrap" id="pubTableWrap"></div>
+  </div>
+</div>
+
+<!-- ══ ДИНАМИКА ══ -->
+<div class="section" id="tab-dynamics">
+  <div class="filter-row">
+    <span class="filter-label">Период:</span>
+    <button class="filter-btn" onclick="setRange(7,this)">7 дней</button>
+    <button class="filter-btn active" onclick="setRange(14,this)">14 дней</button>
+    <button class="filter-btn" onclick="setRange(28,this)">28 дней</button>
+    <button class="filter-btn" onclick="setRange(0,this)">Всё время</button>
+    <button class="filter-btn" id="btnCustom" onclick="toggleCustomRange(this)">Свой период</button>
+  </div>
+  <div class="date-range-row" id="customRangeRow">
+    <label>С:</label><input type="date" class="date-input" id="dateFrom">
+    <span class="date-sep">—</span>
+    <label>По:</label><input type="date" class="date-input" id="dateTo">
+    <button class="apply-btn" onclick="applyCustomRange()">Применить</button>
+    <div class="range-summary" id="rangeSummary" style="display:none">
+      Выбрано: <strong id="rangeSummaryText"></strong>
+      <button class="range-clear" onclick="clearCustomRange()">✕</button>
+    </div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <div class="chart-title">Показы по дням <small id="dynLabel1"></small></div>
+      <canvas id="chartDynImpr"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Открытия по дням</div>
+      <canvas id="chartDynOpens"></canvas>
+    </div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <div class="chart-title">Дочитывания по дням</div>
+      <canvas id="chartDynDeep"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Подписчики (накопленно)</div>
+      <canvas id="chartDynSubs"></canvas>
+    </div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <div class="chart-title">Лайки по дням</div>
+      <canvas id="chartDynLikes"></canvas>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Время просмотра по дням (мин)</div>
+      <canvas id="chartDynTime"></canvas>
+    </div>
+  </div>
+  <div class="chart-grid">
+    <div class="chart-box">
+      <div class="chart-title">Новые подписки с публикаций по дням</div>
+      <canvas id="chartDynSubsDaily"></canvas>
+    </div>
+  </div>
+</div>
+
+</div><!-- /glass-panel -->
+
+<script>
+// ═══════════════════════════════════════════════
+// GLOBALS
+// ═══════════════════════════════════════════════
+let G = {pubs:[],daily:[],subs:[],updated:"",pub_history:{}};
+let chartInstances = {};
+let ovRange=28, ovDateFrom=null, ovDateTo=null;
+let dynRange=14, dynDateFrom=null, dynDateTo=null;
+let pubDateFilter='all', pubDateFrom=null, pubDateTo=null;
+let sortKey="pub_date", sortDir=-1, searchVal="";
+let pubExpandData={}, openExpandIdx=-1, expandChartInst={};
+
+const fmt     = n=>(n>=1000)?(n/1000).toFixed(1)+"к":String(n||0);
+const fmtFull = n=>Number(n||0).toLocaleString("ru-RU");
+const pct     = (a,b)=>b>0?((a/b)*100).toFixed(1):"0";
+const COLORS  = {blue:"#5b9cf6",green:"#6bdfb0",yellow:"#f7d070",red:"#ff6b8a",
+                 purple:"#9b89f5",orange:"#ffaa5e",teal:"#2cc8c0",cyan:"#4ecdc4",cyan2:"#26e5d8"};
+
+function destroyChart(id){
+  if(chartInstances[id]){chartInstances[id].destroy();delete chartInstances[id];}
+}
+function darkScale(){
+  return {grid:{color:"rgba(255,255,255,0.06)"},ticks:{color:"rgba(255,255,255,0.4)",font:{size:10,family:"DM Sans"}}};
+}
+function baseOpts(legend=false){
+  return {
+    responsive:true,maintainAspectRatio:true,
+    plugins:{
+      legend:{display:legend,labels:{color:"rgba(255,255,255,0.55)",boxWidth:10,font:{size:10,family:"DM Sans"}}},
+      tooltip:{backgroundColor:"rgba(10,30,50,0.9)",borderColor:"rgba(78,205,196,0.3)",borderWidth:1,
+               titleColor:"#fff",bodyColor:"rgba(255,255,255,0.6)",padding:10,
+               callbacks:{title:items=>{const ds=items[0]?.chart?.data?.labels;return ds?ds[items[0].dataIndex]:items[0].label;}}}
+    },
+    scales:{x:{...darkScale()},y:{...darkScale()}}
+  };
+}
+function lineDS(label,data,color){
+  return {label,data,borderColor:color,backgroundColor:"transparent",
+          fill:false,tension:.35,pointRadius:data.length>30?0:3,pointHoverRadius:5,borderWidth:2};
+}
+
+// ═══════════════════════════════════════════════
+// OVERVIEW DATE FILTER
+// ═══════════════════════════════════════════════
+function getOvDaily(){
+  if(ovDateFrom&&ovDateTo) return G.daily.filter(d=>d.date>=ovDateFrom&&d.date<=ovDateTo);
+  return ovRange>0?G.daily.slice(-ovRange):G.daily;
+}
+function getOvSubs(){
+  if(ovDateFrom&&ovDateTo) return G.subs.filter(d=>d.date>=ovDateFrom&&d.date<=ovDateTo);
+  return ovRange>0?G.subs.slice(-ovRange):G.subs;
+}
+function setOvRange(days,btn){
+  ovRange=days;ovDateFrom=null;ovDateTo=null;
+  document.querySelectorAll("#tab-overview .filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("ovRangeRow").classList.remove("visible");
+  document.getElementById("ovRangeSummary").style.display="none";
+  renderOverview();
+}
+function toggleOvCustom(btn){
+  const row=document.getElementById("ovRangeRow");
+  if(row.classList.contains("visible")){row.classList.remove("visible");btn.classList.remove("active");}
+  else{
+    row.classList.add("visible");btn.classList.add("active");
+    if(!document.getElementById("ovDateFromInput").value&&G.daily.length){
+      document.getElementById("ovDateFromInput").value=G.daily[0].date;
+      document.getElementById("ovDateToInput").value=G.daily[G.daily.length-1].date;
+    }
+  }
+}
+function applyOvRange(){
+  const from=document.getElementById("ovDateFromInput").value,to=document.getElementById("ovDateToInput").value;
+  if(!from||!to){alert("Выберите обе даты");return;}
+  if(from>to){alert("Дата «С» не может быть позже даты «По»");return;}
+  ovDateFrom=from;ovDateTo=to;ovRange=-1;
+  document.querySelectorAll("#tab-overview .filter-btn:not(#btnOvCustom)").forEach(b=>b.classList.remove("active"));
+  document.getElementById("ovRangeSummaryText").textContent=`${from} → ${to} (${getOvDaily().length} дн.)`;
+  document.getElementById("ovRangeSummary").style.display="flex";
+  renderOverview();
+}
+function clearOvRange(){
+  ovDateFrom=null;ovDateTo=null;ovRange=28;
+  document.getElementById("ovDateFromInput").value="";
+  document.getElementById("ovDateToInput").value="";
+  document.getElementById("ovRangeSummary").style.display="none";
+  document.getElementById("ovRangeRow").classList.remove("visible");
+  document.querySelectorAll("#tab-overview .filter-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll("#tab-overview .filter-btn")[2].classList.add("active");
+  renderOverview();
+}
+
+// ═══════════════════════════════════════════════
+// KPI CARDS
+// ═══════════════════════════════════════════════
+function renderKPI(){
+  const daily=getOvDaily();
+  const totImpr  = daily.reduce((s,x)=>s+(x.impressions||0),0);
+  const totOpens = daily.reduce((s,x)=>s+(x.opens||0),0);
+  const totDeep  = daily.reduce((s,x)=>s+(x.deep_views||0),0);
+  const totSubs  = daily.reduce((s,x)=>s+(x.subscriptions||0),0);
+  const totLikes = daily.reduce((s,x)=>s+(x.likes||0),0);
+  const totTime  = daily.reduce((s,x)=>s+(x.view_time||0),0);
+  const filtSubs = getOvSubs();
+  const lastSubs = filtSubs.length?filtSubs[filtSubs.length-1].subscribers:0;
+  const ctrPct       = pct(totOpens,totImpr);
+  const convOpenDeep = pct(totDeep,totOpens);
+  const convDeepSub  = pct(totSubs,totDeep);
+  const cards=[
+    {label:"Показы",       value:fmtFull(totImpr),  sub:`${G.pubs.length} публикаций`,     conv:`CTR: ${ctrPct}%`,           glow:"rgba(78,205,196,0.25)",  accent:"#4ecdc4"},
+    {label:"Открытия",     value:fmtFull(totOpens), sub:`CTR ${ctrPct}%`,                  conv:`→ Дочит.: ${convOpenDeep}%`, glow:"rgba(107,223,176,0.25)", accent:"#6bdfb0"},
+    {label:"Дочитывания",  value:fmtFull(totDeep),  sub:`из откр.: ${convOpenDeep}%`,      conv:`→ Подписки: ${convDeepSub}%`,glow:"rgba(155,137,245,0.25)", accent:"#9b89f5"},
+    {label:"Подписчики",   value:fmtFull(lastSubs), sub:`+${fmtFull(totSubs)} за период`,  conv:`конв.: ${convDeepSub}%`,     glow:"rgba(255,170,94,0.25)",  accent:"#ffaa5e"},
+    {label:"Лайки",        value:fmtFull(totLikes), sub:"за выбранный период",              conv:"",                           glow:"rgba(255,107,138,0.25)", accent:"#ff6b8a"},
+    {label:"Вр.просм., мин",value:totTime.toFixed(1),sub:"вовлечённость",                  conv:"",                           glow:"rgba(247,208,112,0.25)", accent:"#f7d070"},
+  ];
+  document.getElementById("kpiGrid").innerHTML=cards.map(c=>`
+    <div class="kpi" style="--kpi-glow:${c.glow};--kpi-accent:${c.accent}">
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-value">${c.value}</div>
+      <div class="kpi-sub">${c.sub}</div>
+      ${c.conv?`<div class="kpi-conv">${c.conv}</div>`:''}
+    </div>`).join("");
+}
+
+// ═══════════════════════════════════════════════
+// OVERVIEW CHARTS
+// ═══════════════════════════════════════════════
+function renderDailyLine(){
+  destroyChart("chartDailyLine");
+  const d=getOvDaily(),n=d.length;
+  const lbl=x=>{const p=x.date.split("-");return n>31?p[2]+"."+p[1]+"."+p[0].substring(2):p[2]+"."+p[1];};
+  document.getElementById("ovChartLabel").textContent=ovDateFrom?`${ovDateFrom} → ${ovDateTo}`:`посл. ${n} дн.`;
+  chartInstances["chartDailyLine"]=new Chart(document.getElementById("chartDailyLine").getContext("2d"),{
+    type:"line",
+    data:{labels:d.map(lbl),datasets:[
+      lineDS("Показы",      d.map(x=>x.impressions),COLORS.cyan),
+      lineDS("Открытия",    d.map(x=>x.opens),      COLORS.green),
+      lineDS("Дочитывания", d.map(x=>x.deep_views), COLORS.purple),
+    ]},
+    options:{...baseOpts(true)}
+  });
+}
+function renderSubsChart(){
+  destroyChart("chartSubs");
+  const d=getOvSubs(),n=d.length;
+  const lbl=x=>{const p=x.date.split("-");return n>31?p[2]+"."+p[1]+"."+p[0].substring(2):p[2]+"."+p[1];};
+  chartInstances["chartSubs"]=new Chart(document.getElementById("chartSubs").getContext("2d"),{
+    type:"line",
+    data:{labels:d.map(lbl),datasets:[lineDS("Подписчики",d.map(x=>x.subscribers),COLORS.orange)]},
+    options:baseOpts()
+  });
+}
+function renderTop10(){
+  const top=[...G.pubs].sort((a,b)=>(b.impressions||0)-(a.impressions||0)).slice(0,10);
+  const maxImpr=top[0]?.impressions||1;
+  const rows=top.map((p,i)=>{
+    const barW=Math.round((p.impressions/maxImpr)*180);
+    const link=p.id
+      ?`<a href="https://dzen.ru/a/${p.id}" target="_blank" title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</a>`
+      :`<span title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</span>`;
+    const num=(i+1).toString().padStart(2,'0');
+    return `<tr>
+      <td class="top10-num">${num}</td>
+      <td class="top10-title">${link}</td>
+      <td class="top10-bar-cell"><div class="top10-bar-wrap">
+        <div class="top10-bar" style="width:${barW}px"></div>
+        <span class="top10-val">${fmtFull(p.impressions)}</span>
+      </div></td>
+      <td class="num" style="color:var(--green)">${fmtFull(p.opens)}</td>
+      <td class="num" style="color:var(--violet)">${fmtFull(p.deep_views)}</td>
+      <td class="num" style="color:rgba(255,255,255,0.35)">${p.ctr||0}%</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("top10Wrap").innerHTML=`
+    <table class="top10-table">
+      <thead><tr>
+        <th>#</th><th>Статья</th><th>Показы</th>
+        <th class="num" style="color:var(--green)">Открытия</th>
+        <th class="num" style="color:var(--violet)">Дочит.</th>
+        <th class="num">CTR</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+function renderOverview(){renderKPI();renderDailyLine();renderSubsChart();renderTop10();}
+
+// ═══════════════════════════════════════════════
+// PUBLICATIONS
+// ═══════════════════════════════════════════════
+function getFilteredPubs(){
+  let pubs=G.pubs;
+  if(pubDateFrom&&pubDateTo){pubs=pubs.filter(p=>p.pub_date>=pubDateFrom&&p.pub_date<=pubDateTo);}
+  else if(pubDateFilter!=='all'){
+    const days=parseInt(pubDateFilter),cutoff=new Date();
+    cutoff.setDate(cutoff.getDate()-days);
+    const cutStr=cutoff.toISOString().substring(0,10);
+    pubs=pubs.filter(p=>p.pub_date>=cutStr);
+  }
+  if(searchVal) pubs=pubs.filter(p=>p.title.toLowerCase().includes(searchVal));
+  return pubs;
+}
+function setPubDateFilter(val,btn){
+  pubDateFilter=val;pubDateFrom=null;pubDateTo=null;
+  document.querySelectorAll("#tab-publications .filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("pubRangeRow").classList.remove("visible");
+  document.getElementById("pubRangeSummary").style.display="none";
+  renderPubTable();
+}
+function togglePubCustom(btn){
+  const row=document.getElementById("pubRangeRow");
+  if(row.classList.contains("visible")){row.classList.remove("visible");btn.classList.remove("active");}
+  else{
+    row.classList.add("visible");btn.classList.add("active");
+    if(!document.getElementById("pubDateFromInput").value&&G.pubs.length){
+      const dates=G.pubs.map(p=>p.pub_date).sort();
+      document.getElementById("pubDateFromInput").value=dates[0];
+      document.getElementById("pubDateToInput").value=dates[dates.length-1];
+    }
+  }
+}
+function applyPubRange(){
+  const from=document.getElementById("pubDateFromInput").value,to=document.getElementById("pubDateToInput").value;
+  if(!from||!to){alert("Выберите обе даты");return;}
+  if(from>to){alert("Дата «С» не может быть позже даты «По»");return;}
+  pubDateFrom=from;pubDateTo=to;pubDateFilter='custom';
+  document.querySelectorAll("#tab-publications .filter-btn:not(#btnPubCustom)").forEach(b=>b.classList.remove("active"));
+  document.getElementById("pubRangeSummaryText").textContent=`${from} → ${to}`;
+  document.getElementById("pubRangeSummary").style.display="flex";
+  renderPubTable();
+}
+function clearPubRange(){
+  pubDateFrom=null;pubDateTo=null;pubDateFilter='all';
+  document.getElementById("pubDateFromInput").value="";
+  document.getElementById("pubDateToInput").value="";
+  document.getElementById("pubRangeSummary").style.display="none";
+  document.getElementById("pubRangeRow").classList.remove("visible");
+  document.querySelectorAll("#tab-publications .filter-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll("#tab-publications .filter-btn")[0].classList.add("active");
+  renderPubTable();
+}
+function filterTable(){searchVal=document.getElementById("searchBox").value.toLowerCase();renderPubTable();}
+function sortTable(key){
+  if(sortKey===key)sortDir*=-1;else{sortKey=key;sortDir=-1;}
+  renderPubTable();
+}
+function renderPubTable(){
+  // destroy any open expand charts before re-render
+  Object.keys(expandChartInst).forEach(id=>{expandChartInst[id].destroy();delete expandChartInst[id];});
+  openExpandIdx=-1;
+  let data=getFilteredPubs();
+  data.sort((a,b)=>{let va=a[sortKey]||0,vb=b[sortKey]||0;
+    if(typeof va==="string")return sortDir*va.localeCompare(vb);return sortDir*(vb-va);});
+  document.getElementById("pubCountLabel").textContent=`${data.length} из ${G.pubs.length}`;
+  const maxImpr=Math.max(...data.map(p=>p.impressions||0),1);
+  const pctClass=v=>v>=30?"pct-good":v>=10?"pct-mid":"pct-low";
+  const si=key=>{if(sortKey!==key)return'<i class="sort-icon"></i>';
+    return sortDir===-1?'<i class="sort-icon" style="opacity:1;color:var(--cyan2)">↓</i>':'<i class="sort-icon" style="opacity:1;color:var(--cyan2)">↑</i>';};
+  pubExpandData={};
+  const rows=data.map((p,i)=>{
+    pubExpandData[i]=p;
+    const titleHtml=p.id
+      ?`<a href="https://dzen.ru/a/${p.id}" target="_blank" title="${p.title}" onclick="event.stopPropagation()">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</a>`
+      :`<span title="${p.title}">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</span>`;
+    const expandRow=`<tr class="pub-expand-row" id="exp-row-${i}">
+      <td colspan="11" class="pub-expand-td">
+        <div class="pub-expand-inner">
+          <div class="pub-expand-kpis">
+            <div class="pub-expand-kpi"><div class="pub-expand-kpi-val" style="color:var(--cyan2)">${p.ctr||0}%</div><div class="pub-expand-kpi-lbl">CTR</div></div>
+            <div class="pub-expand-kpi"><div class="pub-expand-kpi-val" style="color:var(--violet)">${p.deep_rate||0}%</div><div class="pub-expand-kpi-lbl">% Дочит.</div></div>
+            <div class="pub-expand-kpi"><div class="pub-expand-kpi-val" style="color:var(--yellow)">${p.view_time||0}</div><div class="pub-expand-kpi-lbl">Мин.</div></div>
+            <div class="pub-expand-kpi"><div class="pub-expand-kpi-val" style="color:var(--orange)">${p.subscriptions||0}</div><div class="pub-expand-kpi-lbl">Подписки</div></div>
+          </div>
+          <div class="pub-expand-chart-box">
+            <div class="pub-expand-chart-title">Показы · Открытия · Дочитывания <small style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--text3)">прирост за день</small></div>
+            <div style="position:relative;height:110px">
+              <canvas id="pc-line1-${i}"></canvas>
+              <div class="pub-expand-placeholder" id="pc-ph1-${i}">
+                <span class="ph-icon">📈</span>
+                <span class="ph-text">Данные накапливаются</span>
+                <span class="ph-sub">Появятся после нескольких<br>запусков скрипта</span>
+              </div>
+            </div>
+          </div>
+          <div class="pub-expand-chart-box">
+            <div class="pub-expand-chart-title">Лайки · Подписки <small style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--text3)">прирост за день</small></div>
+            <div style="position:relative;height:110px">
+              <canvas id="pc-line2-${i}"></canvas>
+              <div class="pub-expand-placeholder" id="pc-ph2-${i}">
+                <span class="ph-icon">📈</span>
+                <span class="ph-text">Данные накапливаются</span>
+                <span class="ph-sub">Появятся после нескольких<br>запусков скрипта</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>`;
+    return `<tr class="pub-data-row" id="pub-data-row-${i}" onclick="togglePubRow(${i})">
+      <td class="pub-title"><span class="pub-chevron" id="pub-chev-${i}">▶</span>${titleHtml}</td>
+      <td><span class="badge badge-${p.type==='gif'?'gif':p.type==='video'?'video':'article'}">${p.type==='gif'?'Пост/Гиф':p.type==='video'?'Видео':'Статья'}</span></td>
+      <td style="color:rgba(255,255,255,0.4);font-size:11px">${p.pub_date}</td>
+      <td class="num bar-cell"><div style="display:flex;align-items:center;gap:8px;justify-content:flex-end">
+        <span class="mini-bar" style="width:${Math.round((p.impressions/maxImpr)*60)}px"></span>${fmtFull(p.impressions)}</div></td>
+      <td class="num">${fmtFull(p.opens)}</td>
+      <td class="num">${fmtFull(p.deep_views)}</td>
+      <td class="num">${fmtFull(p.likes)}</td>
+      <td class="num">${fmtFull(p.subscriptions)}</td>
+      <td class="num ${pctClass(p.ctr)}">${p.ctr||0}%</td>
+      <td class="num ${pctClass(p.deep_rate)}">${p.deep_rate||0}%</td>
+      <td class="num">${p.view_time||0}</td>
+    </tr>${expandRow}`;
+  }).join("");
+  document.getElementById("pubTableWrap").innerHTML=`
+    <table>
+      <thead><tr>
+        <th onclick="sortTable('title')">Публикация ${si('title')}</th>
+        <th>Тип</th>
+        <th onclick="sortTable('pub_date')">Дата ${si('pub_date')}</th>
+        <th onclick="sortTable('impressions')">Показы ${si('impressions')}</th>
+        <th onclick="sortTable('opens')">Открытия ${si('opens')}</th>
+        <th onclick="sortTable('deep_views')">Дочит. ${si('deep_views')}</th>
+        <th onclick="sortTable('likes')">Лайки ${si('likes')}</th>
+        <th onclick="sortTable('subscriptions')">Подписки ${si('subscriptions')}</th>
+        <th onclick="sortTable('ctr')">CTR% ${si('ctr')}</th>
+        <th onclick="sortTable('deep_rate')">%Дочит ${si('deep_rate')}</th>
+        <th onclick="sortTable('view_time')">Мин ${si('view_time')}</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+function togglePubRow(idx){
+  const expRow=document.getElementById('exp-row-'+idx);
+  const dataRow=document.getElementById('pub-data-row-'+idx);
+  const chev=document.getElementById('pub-chev-'+idx);
+  if(!expRow)return;
+  const isOpen=expRow.classList.contains('open');
+  if(openExpandIdx>=0&&openExpandIdx!==idx){
+    const oE=document.getElementById('exp-row-'+openExpandIdx);
+    const oD=document.getElementById('pub-data-row-'+openExpandIdx);
+    const oC=document.getElementById('pub-chev-'+openExpandIdx);
+    if(oE)oE.classList.remove('open');
+    if(oD)oD.classList.remove('expanded');
+    if(oC){oC.textContent='▶';oC.style.transform='';}
+    ['line1','line2'].forEach(t=>{const id='pc-'+t+'-'+openExpandIdx;if(expandChartInst[id]){expandChartInst[id].destroy();delete expandChartInst[id];}});
+  }
+  if(!isOpen){
+    expRow.classList.add('open');dataRow.classList.add('expanded');
+    chev.textContent='▼';openExpandIdx=idx;
+    renderPubExpandedCharts(idx);
+  }else{
+    expRow.classList.remove('open');dataRow.classList.remove('expanded');
+    chev.textContent='▶';openExpandIdx=-1;
+    ['line1','line2'].forEach(t=>{const id='pc-'+t+'-'+idx;if(expandChartInst[id]){expandChartInst[id].destroy();delete expandChartInst[id];}});
+  }
+}
+function renderPubExpandedCharts(idx){
+  const p=pubExpandData[idx];if(!p)return;
+  const id1='pc-line1-'+idx,id2='pc-line2-'+idx;
+  const ph1=document.getElementById('pc-ph1-'+idx);
+  const ph2=document.getElementById('pc-ph2-'+idx);
+  if(expandChartInst[id1])expandChartInst[id1].destroy();
+  if(expandChartInst[id2])expandChartInst[id2].destroy();
+  // get per-article history from pub_history
+  const hist=(p.id&&G.pub_history)?G.pub_history[p.id]||[]:[];
+  const c1=document.getElementById(id1),c2=document.getElementById(id2);
+  if(hist.length<2){
+    // not enough data yet — show placeholder, hide canvas
+    if(c1)c1.style.display='none'; if(c2)c2.style.display='none';
+    if(ph1)ph1.style.display='flex'; if(ph2)ph2.style.display='flex';
+    return;
+  }
+  // enough data — show charts, hide placeholders
+  if(c1)c1.style.display=''; if(c2)c2.style.display='';
+  if(ph1)ph1.style.display='none'; if(ph2)ph2.style.display='none';
+  const n=hist.length;
+  const lbl=x=>{const pr=x.date.split("-");return n>31?pr[2]+"."+pr[1]+"."+pr[0].substring(2):pr[2]+"."+pr[1];};
+  expandChartInst[id1]=new Chart(c1.getContext('2d'),{
+    type:'line',
+    data:{labels:hist.map(lbl),datasets:[
+      lineDS("Показы",      hist.map(x=>x.impressions||0), COLORS.cyan),
+      lineDS("Открытия",    hist.map(x=>x.opens||0),       COLORS.green),
+      lineDS("Дочитывания", hist.map(x=>x.deep_views||0),  COLORS.purple),
+    ]},
+    options:baseOpts(true)
+  });
+  expandChartInst[id2]=new Chart(c2.getContext('2d'),{
+    type:'line',
+    data:{labels:hist.map(lbl),datasets:[
+      lineDS("Лайки",    hist.map(x=>x.likes||0),         COLORS.red),
+      lineDS("Подписки", hist.map(x=>x.subscriptions||0), COLORS.orange),
+    ]},
+    options:baseOpts(true)
+  });
+}
+
+// ═══════════════════════════════════════════════
+// DYNAMICS
+// ═══════════════════════════════════════════════
+function getFilteredDaily(){
+  if(dynDateFrom&&dynDateTo) return G.daily.filter(d=>d.date>=dynDateFrom&&d.date<=dynDateTo);
+  return dynRange>0?G.daily.slice(-dynRange):G.daily;
+}
+function getFilteredSubs(){
+  if(dynDateFrom&&dynDateTo) return G.subs.filter(d=>d.date>=dynDateFrom&&d.date<=dynDateTo);
+  return dynRange>0?G.subs.slice(-dynRange):G.subs;
+}
+function setRange(days,btn){
+  dynRange=days;dynDateFrom=null;dynDateTo=null;
+  document.querySelectorAll("#tab-dynamics .filter-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("customRangeRow").classList.remove("visible");
+  document.getElementById("rangeSummary").style.display="none";
+  renderDynamics();
+}
+function toggleCustomRange(btn){
+  const row=document.getElementById("customRangeRow");
+  if(row.classList.contains("visible")){row.classList.remove("visible");btn.classList.remove("active");}
+  else{
+    row.classList.add("visible");btn.classList.add("active");
+    if(!document.getElementById("dateFrom").value&&G.daily.length){
+      document.getElementById("dateFrom").value=G.daily[0].date;
+      document.getElementById("dateTo").value=G.daily[G.daily.length-1].date;
+    }
+  }
+}
+function applyCustomRange(){
+  const from=document.getElementById("dateFrom").value,to=document.getElementById("dateTo").value;
+  if(!from||!to){alert("Выберите обе даты");return;}
+  if(from>to){alert("Дата «С» не может быть позже даты «По»");return;}
+  dynDateFrom=from;dynDateTo=to;dynRange=-1;
+  document.querySelectorAll("#tab-dynamics .filter-btn:not(#btnCustom)").forEach(b=>b.classList.remove("active"));
+  document.getElementById("rangeSummaryText").textContent=`${from} → ${to} (${getFilteredDaily().length} дн.)`;
+  document.getElementById("rangeSummary").style.display="flex";
+  renderDynamics();
+}
+function clearCustomRange(){
+  dynDateFrom=null;dynDateTo=null;dynRange=14;
+  document.getElementById("dateFrom").value="";
+  document.getElementById("dateTo").value="";
+  document.getElementById("rangeSummary").style.display="none";
+  document.getElementById("customRangeRow").classList.remove("visible");
+  document.querySelectorAll("#tab-dynamics .filter-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll("#tab-dynamics .filter-btn")[1].classList.add("active");
+  renderDynamics();
+}
+function renderDynamics(){
+  const d=getFilteredDaily(),sd=getFilteredSubs(),n=d.length,ns=sd.length;
+  const lbl =x=>{const p=x.date.split("-");return n>31?p[2]+"."+p[1]+"."+p[0].substring(2):p[2]+"."+p[1];};
+  const lbls=x=>{const p=x.date.split("-");return ns>31?p[2]+"."+p[1]+"."+p[0].substring(2):p[2]+"."+p[1];};
+  document.getElementById("dynLabel1").textContent=dynDateFrom?`${dynDateFrom} → ${dynDateTo}`:`${n} дней`;
+  const mk=(id,label,vals,color)=>{
+    destroyChart(id);
+    chartInstances[id]=new Chart(document.getElementById(id).getContext("2d"),{
+      type:"line",data:{labels:d.map(lbl),datasets:[lineDS(label,vals,color)]},options:baseOpts()});
+  };
+  const mkS=(id,label,vals,color)=>{
+    destroyChart(id);
+    chartInstances[id]=new Chart(document.getElementById(id).getContext("2d"),{
+      type:"line",data:{labels:sd.map(lbls),datasets:[lineDS(label,vals,color)]},options:baseOpts()});
+  };
+  mk("chartDynImpr",     "Показы",      d.map(x=>x.impressions),  COLORS.cyan);
+  mk("chartDynOpens",    "Открытия",    d.map(x=>x.opens),        COLORS.green);
+  mk("chartDynDeep",     "Дочитывания", d.map(x=>x.deep_views),   COLORS.purple);
+  mkS("chartDynSubs",    "Подписчики",  sd.map(x=>x.subscribers), COLORS.orange);
+  mk("chartDynLikes",    "Лайки",       d.map(x=>x.likes),        COLORS.red);
+  mk("chartDynTime",     "Мин",         d.map(x=>x.view_time),    COLORS.yellow);
+  mk("chartDynSubsDaily","Подписки",    d.map(x=>x.subscriptions),COLORS.teal);
+}
+
+// ═══════════════════════════════════════════════
+// TABS & INIT
+// ═══════════════════════════════════════════════
+function switchTab(name,el){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("tab-"+name).classList.add("active");
+  el.classList.add("active");
+  if(name==="dynamics") renderDynamics();
+  if(name==="overview") renderOverview();
+}
+function renderAll(){renderOverview();renderPubTable();renderDynamics();}
+
+async function loadData(){
+  const EMBEDDED = {"updated": "2026-05-05", "pubs": [{"snapshot": "2026-05-05", "id": "69f8962e1172e554b92d3bbe", "title": "90% маркетологов используют ИИ неправильно. Я 3 года смотрю, как они повторяют одну и ту же ошибку", "type": "article", "pub_date": "2026-05-04", "impressions": 1, "opens": 2, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69f3479e44c9f40182de3d68", "title": "Почему нейросеть не знает ваш бизнес — и что с этим делать", "type": "article", "pub_date": "2026-04-30", "impressions": 10, "opens": 1, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69f32f876c96204aceb32dbb", "title": "Бесплатный курс «6 готовых ИИ-агентов»", "type": "gif", "pub_date": "2026-04-30", "impressions": 15, "opens": 4, "deep_views": 2, "video_views": 3, "subscriptions": 0, "likes": 1, "comments": 1, "shares": 0, "view_time": 0, "ctr": 20, "deep_rate": 66.67}, {"snapshot": "2026-05-05", "id": "69e5e294720368291496c7b3", "title": "От анализа конкурентов к контент-плану за 3 часа: пошаговая схема", "type": "article", "pub_date": "2026-04-20", "impressions": 92, "opens": 11, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 3, "comments": 0, "shares": 0, "view_time": 0, "ctr": 6.52, "deep_rate": 10}, {"snapshot": "2026-05-05", "id": "69e21c9ca049d744bba66183", "title": "Как проанализировать ЦА за 2 дня вместо 2 недель: схема с ИИ", "type": "article", "pub_date": "2026-04-19", "impressions": 72, "opens": 8, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 2, "comments": 0, "shares": 0, "view_time": 0, "ctr": 2.78, "deep_rate": 16.67}, {"snapshot": "2026-05-05", "id": "69e211ed0588e06d11b0fdba", "title": "Чек-лист хорошего промпта: 10 признаков, которые отличают рабочий запрос от слабого", "type": "article", "pub_date": "2026-04-18", "impressions": 69, "opens": 8, "deep_views": 2, "video_views": 2, "subscriptions": 0, "likes": 2, "comments": 0, "shares": 0, "view_time": 1.2, "ctr": 2.9, "deep_rate": 28.57}, {"snapshot": "2026-05-05", "id": "69e1c258285d501373a07ff0", "title": "11 промптов для маркетингового анализа: ЦА, конкуренты, позиционирование, контент", "type": "article", "pub_date": "2026-04-17", "impressions": 43, "opens": 9, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 3, "comments": 0, "shares": 0, "view_time": 0, "ctr": 6.98, "deep_rate": 11.11}, {"snapshot": "2026-05-05", "id": "69e0bd4902509c6e387f2681", "title": "Как создать агента-копирайтера в Perplexity: пошаговая инструкция от промпта до результата", "type": "article", "pub_date": "2026-04-17", "impressions": 37, "opens": 12, "deep_views": 2, "video_views": 2, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 6.6, "ctr": 2.7, "deep_rate": 20}, {"snapshot": "2026-05-05", "id": "69e09e17c067675e6332d38e", "title": "Как маркетологи теряют время на ИИ: 7 неочевидных ловушек", "type": "article", "pub_date": "2026-04-17", "impressions": 33, "opens": 8, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69e06e968600a54f99db5da7", "title": "Файл описания бизнеса: почему без него ИИ работает вхолостую", "type": "article", "pub_date": "2026-04-16", "impressions": 30, "opens": 3, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69df540500c2772fb2032d5f", "title": "Почему тексты ChatGPT похожи друг на друга – и как это исправить", "type": "article", "pub_date": "2026-04-16", "impressions": 27, "opens": 3, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69df3dcad323d73e835077bb", "title": "10 параметров конкурентного анализа, которые SMM обычно игнорирует", "type": "article", "pub_date": "2026-04-16", "impressions": 16, "opens": 4, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 6.25, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69de331dfd89f7546881dcab", "title": "Стиль бренда в ИИ: как научить нейросеть писать «вашим голосом»", "type": "article", "pub_date": "2026-04-15", "impressions": 18, "opens": 6, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69de2664230a213955cde41d", "title": "Почему ИИ пишет «воду» — и как это исправить", "type": "article", "pub_date": "2026-04-15", "impressions": 18, "opens": 5, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69de155bfec7647cbc3a7919", "title": "Слабые места конкурентов за 15 минут: 5 промптов для ИИ", "type": "article", "pub_date": "2026-04-15", "impressions": 15, "opens": 5, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 25}, {"snapshot": "2026-05-05", "id": "69de0b84d698251a58a64ac5", "title": "Как настроить ИИ-агента один раз и анализировать конкурентов за 5 минут", "type": "article", "pub_date": "2026-04-15", "impressions": 63, "opens": 12, "deep_views": 5, "video_views": 5, "subscriptions": 1, "likes": 1, "comments": 0, "shares": 0, "view_time": 5.3, "ctr": 1.59, "deep_rate": 50}, {"snapshot": "2026-05-05", "id": "69ddd20a7406736c715c268b", "title": "Как составить ToV-документ за один вечер: 4 промпта для нейросети", "type": "article", "pub_date": "2026-04-14", "impressions": 28, "opens": 6, "deep_views": 2, "video_views": 2, "subscriptions": 0, "likes": 1, "comments": 0, "shares": 0, "view_time": 0.7, "ctr": 7.14, "deep_rate": 33.33}, {"snapshot": "2026-05-05", "id": "69dcdff7d250b343c4e88fd3", "title": "Какой тип SEO выбрать для бизнеса в 2026 году", "type": "article", "pub_date": "2026-04-13", "impressions": 32, "opens": 6, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 3, "comments": 0, "shares": 0, "view_time": 1.9, "ctr": 12.5, "deep_rate": 16.67}, {"snapshot": "2026-05-05", "id": "69d8de77ddcf6236004d848b", "title": "GPT vs Perplexity для маркетингового анализа: что выбрать?", "type": "article", "pub_date": "2026-04-13", "impressions": 56, "opens": 9, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 3, "comments": 0, "shares": 0, "view_time": 0, "ctr": 3.57, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69d8cf598f164c75fadda0c1", "title": "Как правильно писать запросы в нейронки: разбор 10 типичных ошибок", "type": "article", "pub_date": "2026-04-12", "impressions": 46, "opens": 6, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 2, "comments": 0, "shares": 0, "view_time": 0, "ctr": 4.35, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69d8c9f1eb93124f5332b62e", "title": "Что такое Tone of Voice и почему без него ИИ пишет «ни для кого»", "type": "article", "pub_date": "2026-04-12", "impressions": 36, "opens": 4, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 2, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69d8c0d88f409a0935cbf50a", "title": "Как анализировать конкурентов в SMM: полный разбор с нуля", "type": "article", "pub_date": "2026-04-11", "impressions": 28, "opens": 3, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 2, "comments": 0, "shares": 0, "view_time": 0, "ctr": 0, "deep_rate": 0}, {"snapshot": "2026-05-05", "id": "69d8a1f8dcf8776f14a5104f", "title": "30 фраз, которые выдают текст ИИ с головой: полный список", "type": "article", "pub_date": "2026-04-11", "impressions": 26, "opens": 7, "deep_views": 2, "video_views": 2, "subscriptions": 0, "likes": 2, "comments": 0, "shares": 0, "view_time": 1.2, "ctr": 3.85, "deep_rate": 28.57}, {"snapshot": "2026-05-05", "id": "69d88edffb6a431289545887", "title": "Почему ChatGPT пишет «воду»: 5 причин, о которых никто не говорит", "type": "article", "pub_date": "2026-04-10", "impressions": 26, "opens": 6, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 3, "comments": 0, "shares": 0, "view_time": 0.5, "ctr": 7.69, "deep_rate": 20}, {"snapshot": "2026-05-05", "id": "69d5d97d4282c550d543e273", "title": "Тренды ИИ 2026: агенты под угрозой, дефицит мощностей и взрослая экономика роста", "type": "article", "pub_date": "2026-04-09", "impressions": 38, "opens": 4, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 3, "comments": 0, "shares": 0, "view_time": 1.5, "ctr": 2.63, "deep_rate": 25}, {"snapshot": "2026-05-05", "id": "69d4ecac2b46ec470ee469c5", "title": "Где сейчас AI‑маркетинг и почему всё не так радужно", "type": "article", "pub_date": "2026-04-08", "impressions": 40, "opens": 7, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 4, "comments": 0, "shares": 0, "view_time": 0, "ctr": 2.5, "deep_rate": 16.67}, {"snapshot": "2026-05-05", "id": "69d4e2c6114bdd72c01e4631", "title": "ИИ в контент‑маркетинге: выигрывает не тот, кто просто пользуется ИИ", "type": "article", "pub_date": "2026-04-08", "impressions": 42, "opens": 11, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 5, "comments": 0, "shares": 0, "view_time": 0, "ctr": 11.9, "deep_rate": 9.09}, {"snapshot": "2026-05-05", "id": "69d4b5f4fdd043526e0f2cbb", "title": "Экосистема СОЗИДАЙ: обучение, агенты и услуги, которые экономят ваш маркетинг", "type": "article", "pub_date": "2026-04-07", "impressions": 54, "opens": 15, "deep_views": 4, "video_views": 4, "subscriptions": 1, "likes": 8, "comments": 0, "shares": 0, "view_time": 3.8, "ctr": 14.81, "deep_rate": 26.67}], "daily": [{"date": "2026-04-06", "impressions": 10, "opens": 6, "deep_views": 1, "video_views": 1, "subscriptions": 4, "likes": 5, "view_time": 2.3}, {"date": "2026-04-07", "impressions": 26, "opens": 7, "deep_views": 2, "video_views": 2, "subscriptions": 2, "likes": 6, "view_time": 0}, {"date": "2026-04-08", "impressions": 33, "opens": 6, "deep_views": 1, "video_views": 1, "subscriptions": 1, "likes": 1, "view_time": 1.5}, {"date": "2026-04-09", "impressions": 20, "opens": 9, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-10", "impressions": 6, "opens": 0, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-11", "impressions": 1, "opens": 0, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-12", "impressions": 130, "opens": 7, "deep_views": 3, "video_views": 3, "subscriptions": 6, "likes": 12, "view_time": 2}, {"date": "2026-04-13", "impressions": 50, "opens": 11, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 1, "view_time": 1.9}, {"date": "2026-04-14", "impressions": 80, "opens": 13, "deep_views": 4, "video_views": 4, "subscriptions": 0, "likes": 12, "view_time": 1.8}, {"date": "2026-04-15", "impressions": 7, "opens": 8, "deep_views": 1, "video_views": 1, "subscriptions": 1, "likes": 0, "view_time": 4.3}, {"date": "2026-04-16", "impressions": 14, "opens": 7, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 0, "view_time": 2.3}, {"date": "2026-04-17", "impressions": 3, "opens": 2, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 0, "view_time": 4.3}, {"date": "2026-04-18", "impressions": 1, "opens": 0, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-19", "impressions": 14, "opens": 9, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 2, "view_time": 0}, {"date": "2026-04-20", "impressions": 4, "opens": 4, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-21", "impressions": 26, "opens": 4, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-22", "impressions": 73, "opens": 7, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-23", "impressions": 320, "opens": 34, "deep_views": 4, "video_views": 4, "subscriptions": 7, "likes": 17, "view_time": 0}, {"date": "2026-04-24", "impressions": 18, "opens": 3, "deep_views": 2, "video_views": 2, "subscriptions": 0, "likes": 0, "view_time": 2.3}, {"date": "2026-04-25", "impressions": 5, "opens": 2, "deep_views": 1, "video_views": 1, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-26", "impressions": 70, "opens": 27, "deep_views": 0, "video_views": 0, "subscriptions": 2, "likes": 1, "view_time": 0}, {"date": "2026-04-27", "impressions": 6, "opens": 1, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-28", "impressions": 8, "opens": 4, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-29", "impressions": 31, "opens": 8, "deep_views": 2, "video_views": 3, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-04-30", "impressions": 7, "opens": 1, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-05-01", "impressions": 5, "opens": 0, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-05-02", "impressions": 9, "opens": 0, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}, {"date": "2026-05-03", "impressions": 31, "opens": 4, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 1, "view_time": 0}, {"date": "2026-05-04", "impressions": 3, "opens": 1, "deep_views": 0, "video_views": 0, "subscriptions": 0, "likes": 0, "view_time": 0}], "subs": [{"date": "2026-04-06", "subscribers": 4, "diff": 0}, {"date": "2026-04-07", "subscribers": 6, "diff": 2}, {"date": "2026-04-08", "subscribers": 7, "diff": 1}, {"date": "2026-04-09", "subscribers": 7, "diff": 0}, {"date": "2026-04-10", "subscribers": 7, "diff": 0}, {"date": "2026-04-11", "subscribers": 7, "diff": 0}, {"date": "2026-04-12", "subscribers": 13, "diff": 6}, {"date": "2026-04-13", "subscribers": 13, "diff": 0}, {"date": "2026-04-14", "subscribers": 13, "diff": 0}, {"date": "2026-04-15", "subscribers": 14, "diff": 1}, {"date": "2026-04-16", "subscribers": 14, "diff": 0}, {"date": "2026-04-17", "subscribers": 14, "diff": 0}, {"date": "2026-04-18", "subscribers": 14, "diff": 0}, {"date": "2026-04-19", "subscribers": 14, "diff": 0}, {"date": "2026-04-20", "subscribers": 14, "diff": 0}, {"date": "2026-04-21", "subscribers": 14, "diff": 0}, {"date": "2026-04-22", "subscribers": 14, "diff": 0}, {"date": "2026-04-23", "subscribers": 21, "diff": 7}, {"date": "2026-04-24", "subscribers": 21, "diff": 0}, {"date": "2026-04-25", "subscribers": 21, "diff": 0}, {"date": "2026-04-26", "subscribers": 23, "diff": 2}, {"date": "2026-04-27", "subscribers": 23, "diff": 0}, {"date": "2026-04-28", "subscribers": 23, "diff": 0}, {"date": "2026-04-29", "subscribers": 23, "diff": 0}, {"date": "2026-04-30", "subscribers": 23, "diff": 0}, {"date": "2026-05-01", "subscribers": 23, "diff": 0}, {"date": "2026-05-02", "subscribers": 23, "diff": 0}, {"date": "2026-05-03", "subscribers": 23, "diff": 0}, {"date": "2026-05-04", "subscribers": 23, "diff": 0}]};
+  function applyData(d){
+    G.updated     = d.updated      || "—";
+    G.pubs        = d.pubs         || [];
+    G.daily       = d.daily        || [];
+    G.subs        = d.subs         || [];
+    G.pub_history = d.pub_history  || {};
+    renderAll();
+  }
+  try {
+    const r = await fetch('dzen_data.json?_='+Date.now());
+    if(!r.ok) throw new Error('no file');
+    const fresh = await r.json();
+    applyData(fresh);
+  } catch(e) {
+    applyData(EMBEDDED);
+  }
+}
+loadData();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+name: Daily Dzen Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # каждый день в 09:00 МСК (UTC+3)
+  workflow_dispatch:       # ручной запуск через кнопку в GitHub Actions
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write      # нужно для git push
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright openpyxl
+          playwright install chromium --with-deps
+
+      - name: Collect & update
+        env:
+          DZEN_COOKIES: ${{ secrets.DZEN_COOKIES }}
+        run: python dzen_collect.py
+
+      - name: Commit updated files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dzen_data.json dzen_dashboard.html dzen_analytics.xlsx
+          git diff --staged --quiet || git commit -m "Auto-update: $(date -u '+%Y-%m-%d')"
+          git push
+
+  notify_on_failure:
+    if: failure()
+    needs: update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print failure info
+        run: echo "Daily update failed. Check logs above."
