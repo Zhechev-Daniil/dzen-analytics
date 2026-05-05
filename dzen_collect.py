@@ -106,7 +106,8 @@ def collect_via_playwright(publisher_id: str) -> str:
         # Ждём загрузки данных
         page.wait_for_timeout(3000)
 
-        result = page.evaluate(JS_EXTRACTOR, publisher_id)
+        js_call = f"({JS_EXTRACTOR.strip()})('{publisher_id}')"
+        result = page.evaluate(js_call)
         context.close()
         return result
 
@@ -141,8 +142,9 @@ def collect_via_playwright_ci(publisher_id: str) -> str:
         page.goto(stats_url, wait_until="networkidle", timeout=60000)
         page.wait_for_timeout(4000)
 
+        js_call = f"({JS_EXTRACTOR.strip()})('{publisher_id}')"
         try:
-            result = page.evaluate(JS_EXTRACTOR, publisher_id)
+            result = page.evaluate(js_call)
         except Exception as e:
             if "No CSRF token" in str(e):
                 raise RuntimeError(
