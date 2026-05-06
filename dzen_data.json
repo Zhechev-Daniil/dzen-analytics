@@ -3,13 +3,32 @@
   "pubs": [
     {
       "snapshot": "2026-05-06",
+      "id": "69fb21600060d97e813f2808",
+      "title": "Бизнес-бриф для нейросети: 34 вопроса, после которых ChatGPT начинает работать именно на ваш бизнес",
+      "type": "article",
+      "pub_date": "2026-05-06",
+      "link": "https://dzen.ru/a/afshYABg2X6BPygI",
+      "impressions": 2,
+      "opens": 4,
+      "deep_views": 1,
+      "video_views": 1,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 100
+    },
+    {
+      "snapshot": "2026-05-06",
       "id": "69f9c672db22e333c4a6de0c",
       "title": "6 ИИ-агентов вместо отдела маркетинга: как собрать их бесплатно в ChatGPT и Perplexity",
       "type": "article",
       "pub_date": "2026-05-05",
-      "link": "/a/afnGctsi4zPEpt4M",
-      "impressions": 1,
-      "opens": 1,
+      "link": "https://dzen.ru/a/afnGctsi4zPEpt4M",
+      "impressions": 4,
+      "opens": 2,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -26,8 +45,8 @@
       "title": "90% маркетологов используют ИИ неправильно. Я 3 года смотрю, как они повторяют одну и ту же ошибку",
       "type": "article",
       "pub_date": "2026-05-04",
-      "link": "/a/afiWLhFy5VS5LTu-",
-      "impressions": 12,
+      "link": "https://dzen.ru/a/afiWLhFy5VS5LTu-",
+      "impressions": 15,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -36,7 +55,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 8.33,
+      "ctr": 6.67,
       "deep_rate": 0
     },
     {
@@ -45,8 +64,8 @@
       "title": "Почему нейросеть не знает ваш бизнес — и что с этим делать",
       "type": "article",
       "pub_date": "2026-04-30",
-      "link": "/a/afNHnkTJ9AGC3j1o",
-      "impressions": 23,
+      "link": "https://dzen.ru/a/afNHnkTJ9AGC3j1o",
+      "impressions": 26,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -55,7 +74,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 4.35,
+      "ctr": 3.85,
       "deep_rate": 0
     },
     {
@@ -64,9 +83,9 @@
       "title": "Бесплатный курс «6 готовых ИИ-агентов»",
       "type": "gif",
       "pub_date": "2026-04-30",
-      "link": "/video/watch/69f32f876c96204aceb32dbb",
-      "impressions": 25,
-      "opens": 16,
+      "link": "https://dzen.ru/video/watch/69f32f876c96204aceb32dbb",
+      "impressions": 26,
+      "opens": 11,
       "deep_views": 6,
       "video_views": 8,
       "subscriptions": 0,
@@ -74,7 +93,7 @@
       "comments": 1,
       "shares": 0,
       "view_time": 0,
-      "ctr": 12,
+      "ctr": 11.54,
       "deep_rate": 75
     },
     {
@@ -83,9 +102,9 @@
       "title": "От анализа конкурентов к контент-плану за 3 часа: пошаговая схема",
       "type": "article",
       "pub_date": "2026-04-20",
-      "link": "/a/aeXilHIDaCkUlsez",
-      "impressions": 101,
-      "opens": 11,
+      "link": "https://dzen.ru/a/aeXilHIDaCkUlsez",
+      "impressions": 103,
+      "opens": 12,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -93,8 +112,8 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 5.94,
-      "deep_rate": 10
+      "ctr": 5.83,
+      "deep_rate": 9.09
     },
     {
       "snapshot": "2026-05-06",
@@ -102,8 +121,8 @@
       "title": "Как проанализировать ЦА за 2 дня вместо 2 недель: схема с ИИ",
       "type": "article",
       "pub_date": "2026-04-19",
-      "link": "/a/aeIcnKBJ10S7pmGD",
-      "impressions": 80,
+      "link": "https://dzen.ru/a/aeIcnKBJ10S7pmGD",
+      "impressions": 82,
       "opens": 8,
       "deep_views": 1,
       "video_views": 1,
@@ -112,7 +131,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 2.5,
+      "ctr": 2.44,
       "deep_rate": 16.67
     },
     {
@@ -121,9 +140,9 @@
       "title": "Чек-лист хорошего промпта: 10 признаков, которые отличают рабочий запрос от слабого",
       "type": "article",
       "pub_date": "2026-04-18",
-      "link": "/a/aeIR7QWI4G0RsP26",
-      "impressions": 73,
-      "opens": 8,
+      "link": "https://dzen.ru/a/aeIR7QWI4G0RsP26",
+      "impressions": 74,
+      "opens": 9,
       "deep_views": 2,
       "video_views": 2,
       "subscriptions": 0,
@@ -131,7 +150,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 1.2,
-      "ctr": 2.74,
+      "ctr": 2.7,
       "deep_rate": 28.57
     },
     {
@@ -140,8 +159,8 @@
       "title": "11 промптов для маркетингового анализа: ЦА, конкуренты, позиционирование, контент",
       "type": "article",
       "pub_date": "2026-04-17",
-      "link": "/a/aeHCWChdUBNzoH_w",
-      "impressions": 46,
+      "link": "https://dzen.ru/a/aeHCWChdUBNzoH_w",
+      "impressions": 47,
       "opens": 9,
       "deep_views": 1,
       "video_views": 1,
@@ -150,7 +169,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 6.52,
+      "ctr": 6.38,
       "deep_rate": 11.11
     },
     {
@@ -159,8 +178,8 @@
       "title": "Как создать агента-копирайтера в Perplexity: пошаговая инструкция от промпта до результата",
       "type": "article",
       "pub_date": "2026-04-17",
-      "link": "/a/aeC9SQJQnG44fyaB",
-      "impressions": 39,
+      "link": "https://dzen.ru/a/aeC9SQJQnG44fyaB",
+      "impressions": 40,
       "opens": 12,
       "deep_views": 2,
       "video_views": 2,
@@ -169,7 +188,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 6.6,
-      "ctr": 2.56,
+      "ctr": 2.5,
       "deep_rate": 20
     },
     {
@@ -178,8 +197,8 @@
       "title": "Как маркетологи теряют время на ИИ: 7 неочевидных ловушек",
       "type": "article",
       "pub_date": "2026-04-17",
-      "link": "/a/aeCeF8BnZ15jMtOO",
-      "impressions": 33,
+      "link": "https://dzen.ru/a/aeCeF8BnZ15jMtOO",
+      "impressions": 34,
       "opens": 8,
       "deep_views": 0,
       "video_views": 0,
@@ -197,7 +216,7 @@
       "title": "Файл описания бизнеса: почему без него ИИ работает вхолостую",
       "type": "article",
       "pub_date": "2026-04-16",
-      "link": "/a/aeBuloYApU-Z212n",
+      "link": "https://dzen.ru/a/aeBuloYApU-Z212n",
       "impressions": 30,
       "opens": 3,
       "deep_views": 0,
@@ -216,9 +235,9 @@
       "title": "Почему тексты ChatGPT похожи друг на друга – и как это исправить",
       "type": "article",
       "pub_date": "2026-04-16",
-      "link": "/a/ad9UBQDCdy-yAy1f",
+      "link": "https://dzen.ru/a/ad9UBQDCdy-yAy1f",
       "impressions": 27,
-      "opens": 3,
+      "opens": 4,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -235,8 +254,8 @@
       "title": "10 параметров конкурентного анализа, которые SMM обычно игнорирует",
       "type": "article",
       "pub_date": "2026-04-16",
-      "link": "/a/ad89ytMj1z6DUHe7",
-      "impressions": 16,
+      "link": "https://dzen.ru/a/ad89ytMj1z6DUHe7",
+      "impressions": 17,
       "opens": 4,
       "deep_views": 0,
       "video_views": 0,
@@ -245,7 +264,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 6.25,
+      "ctr": 5.88,
       "deep_rate": 0
     },
     {
@@ -254,8 +273,8 @@
       "title": "Стиль бренда в ИИ: как научить нейросеть писать «вашим голосом»",
       "type": "article",
       "pub_date": "2026-04-15",
-      "link": "/a/ad4zHf2J91Rogdyr",
-      "impressions": 18,
+      "link": "https://dzen.ru/a/ad4zHf2J91Rogdyr",
+      "impressions": 19,
       "opens": 6,
       "deep_views": 0,
       "video_views": 0,
@@ -273,8 +292,8 @@
       "title": "Почему ИИ пишет «воду» — и как это исправить",
       "type": "article",
       "pub_date": "2026-04-15",
-      "link": "/a/ad4mZCMKITlVzeQd",
-      "impressions": 18,
+      "link": "https://dzen.ru/a/ad4mZCMKITlVzeQd",
+      "impressions": 19,
       "opens": 5,
       "deep_views": 0,
       "video_views": 0,
@@ -292,8 +311,8 @@
       "title": "Слабые места конкурентов за 15 минут: 5 промптов для ИИ",
       "type": "article",
       "pub_date": "2026-04-15",
-      "link": "/a/ad4VW_7HZHy8OnkZ",
-      "impressions": 15,
+      "link": "https://dzen.ru/a/ad4VW_7HZHy8OnkZ",
+      "impressions": 16,
       "opens": 5,
       "deep_views": 1,
       "video_views": 1,
@@ -311,8 +330,8 @@
       "title": "Как настроить ИИ-агента один раз и анализировать конкурентов за 5 минут",
       "type": "article",
       "pub_date": "2026-04-15",
-      "link": "/a/ad4LhNaYJRpYpkrF",
-      "impressions": 70,
+      "link": "https://dzen.ru/a/ad4LhNaYJRpYpkrF",
+      "impressions": 74,
       "opens": 13,
       "deep_views": 5,
       "video_views": 5,
@@ -321,7 +340,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 5.3,
-      "ctr": 1.43,
+      "ctr": 1.35,
       "deep_rate": 45.45
     },
     {
@@ -330,8 +349,8 @@
       "title": "Как составить ToV-документ за один вечер: 4 промпта для нейросети",
       "type": "article",
       "pub_date": "2026-04-14",
-      "link": "/a/ad3SCnQGc2xxXCaL",
-      "impressions": 28,
+      "link": "https://dzen.ru/a/ad3SCnQGc2xxXCaL",
+      "impressions": 29,
       "opens": 6,
       "deep_views": 2,
       "video_views": 2,
@@ -340,7 +359,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0.7,
-      "ctr": 7.14,
+      "ctr": 6.9,
       "deep_rate": 33.33
     },
     {
@@ -349,8 +368,8 @@
       "title": "Какой тип SEO выбрать для бизнеса в 2026 году",
       "type": "article",
       "pub_date": "2026-04-13",
-      "link": "/a/adzf99JQs0PE6I_T",
-      "impressions": 32,
+      "link": "https://dzen.ru/a/adzf99JQs0PE6I_T",
+      "impressions": 33,
       "opens": 6,
       "deep_views": 1,
       "video_views": 1,
@@ -359,7 +378,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 1.9,
-      "ctr": 12.5,
+      "ctr": 12.12,
       "deep_rate": 16.67
     },
     {
@@ -368,8 +387,8 @@
       "title": "GPT vs Perplexity для маркетингового анализа: что выбрать?",
       "type": "article",
       "pub_date": "2026-04-13",
-      "link": "/a/adjed93PYjYATYSL",
-      "impressions": 56,
+      "link": "https://dzen.ru/a/adjed93PYjYATYSL",
+      "impressions": 57,
       "opens": 14,
       "deep_views": 0,
       "video_views": 0,
@@ -378,7 +397,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 3.57,
+      "ctr": 3.51,
       "deep_rate": 0
     },
     {
@@ -387,9 +406,9 @@
       "title": "Как правильно писать запросы в нейронки: разбор 10 типичных ошибок",
       "type": "article",
       "pub_date": "2026-04-12",
-      "link": "/a/adjPWY8WTHX63aDB",
+      "link": "https://dzen.ru/a/adjPWY8WTHX63aDB",
       "impressions": 46,
-      "opens": 8,
+      "opens": 9,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -406,7 +425,7 @@
       "title": "Что такое Tone of Voice и почему без него ИИ пишет «ни для кого»",
       "type": "article",
       "pub_date": "2026-04-12",
-      "link": "/a/adjJ8euTEk9TMrYu",
+      "link": "https://dzen.ru/a/adjJ8euTEk9TMrYu",
       "impressions": 36,
       "opens": 4,
       "deep_views": 0,
@@ -425,7 +444,7 @@
       "title": "Как анализировать конкурентов в SMM: полный разбор с нуля",
       "type": "article",
       "pub_date": "2026-04-11",
-      "link": "/a/adjA2I9Amgk1y_UK",
+      "link": "https://dzen.ru/a/adjA2I9Amgk1y_UK",
       "impressions": 28,
       "opens": 3,
       "deep_views": 0,
@@ -444,18 +463,18 @@
       "title": "30 фраз, которые выдают текст ИИ с головой: полный список",
       "type": "article",
       "pub_date": "2026-04-11",
-      "link": "/a/adih-Nz4d28UpRBP",
+      "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 26,
-      "opens": 8,
-      "deep_views": 2,
-      "video_views": 2,
+      "opens": 22,
+      "deep_views": 3,
+      "video_views": 3,
       "subscriptions": 0,
       "likes": 2,
       "comments": 0,
       "shares": 0,
       "view_time": 1.2,
       "ctr": 3.85,
-      "deep_rate": 25
+      "deep_rate": 33.33
     },
     {
       "snapshot": "2026-05-06",
@@ -463,7 +482,7 @@
       "title": "Почему ChatGPT пишет «воду»: 5 причин, о которых никто не говорит",
       "type": "article",
       "pub_date": "2026-04-10",
-      "link": "/a/adiO3_tqQxKJVFiH",
+      "link": "https://dzen.ru/a/adiO3_tqQxKJVFiH",
       "impressions": 26,
       "opens": 6,
       "deep_views": 1,
@@ -482,8 +501,8 @@
       "title": "Тренды ИИ 2026: агенты под угрозой, дефицит мощностей и взрослая экономика роста",
       "type": "article",
       "pub_date": "2026-04-09",
-      "link": "/a/adXZfUKCxVDVQ-Jz",
-      "impressions": 47,
+      "link": "https://dzen.ru/a/adXZfUKCxVDVQ-Jz",
+      "impressions": 48,
       "opens": 4,
       "deep_views": 1,
       "video_views": 1,
@@ -492,7 +511,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 1.5,
-      "ctr": 2.13,
+      "ctr": 2.08,
       "deep_rate": 25
     },
     {
@@ -501,7 +520,7 @@
       "title": "Где сейчас AI‑маркетинг и почему всё не так радужно",
       "type": "article",
       "pub_date": "2026-04-08",
-      "link": "/a/adTsrCtG7EcO5GnF",
+      "link": "https://dzen.ru/a/adTsrCtG7EcO5GnF",
       "impressions": 40,
       "opens": 7,
       "deep_views": 1,
@@ -520,8 +539,8 @@
       "title": "ИИ в контент‑маркетинге: выигрывает не тот, кто просто пользуется ИИ",
       "type": "article",
       "pub_date": "2026-04-08",
-      "link": "/a/adTixhFL3XLAHkYx",
-      "impressions": 42,
+      "link": "https://dzen.ru/a/adTixhFL3XLAHkYx",
+      "impressions": 43,
       "opens": 12,
       "deep_views": 1,
       "video_views": 1,
@@ -530,7 +549,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 11.9,
+      "ctr": 11.63,
       "deep_rate": 8.33
     },
     {
@@ -539,8 +558,8 @@
       "title": "Экосистема СОЗИДАЙ: обучение, агенты и услуги, которые экономят ваш маркетинг",
       "type": "article",
       "pub_date": "2026-04-07",
-      "link": "/a/adS19P3QQ1JuDyy7",
-      "impressions": 55,
+      "link": "https://dzen.ru/a/adS19P3QQ1JuDyy7",
+      "impressions": 56,
       "opens": 15,
       "deep_views": 4,
       "video_views": 4,
@@ -549,7 +568,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 3.8,
-      "ctr": 14.55,
+      "ctr": 14.29,
       "deep_rate": 26.67
     }
   ],
@@ -846,10 +865,10 @@
     },
     {
       "date": "2026-05-05",
-      "impressions": 13,
-      "opens": 14,
-      "deep_views": 1,
-      "video_views": 1,
+      "impressions": 47,
+      "opens": 32,
+      "deep_views": 3,
+      "video_views": 3,
       "subscriptions": 0,
       "likes": 1,
       "view_time": 0
@@ -1160,6 +1179,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-06",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69f9c672db22e333c4a6de0c": [
@@ -1223,6 +1250,96 @@
       }
     ],
     "69d4b5f4fdd043526e0f2cbb": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fb21600060d97e813f2808": [
+      {
+        "date": "2026-05-06",
+        "impressions": 2,
+        "opens": 4,
+        "deep_views": 1,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69e09e17c067675e6332d38e": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69df540500c2772fb2032d5f": [
+      {
+        "date": "2026-05-06",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69df3dcad323d73e835077bb": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69de331dfd89f7546881dcab": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69de2664230a213955cde41d": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69de155bfec7647cbc3a7919": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69ddd20a7406736c715c268b": [
+      {
+        "date": "2026-05-06",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69dcdff7d250b343c4e88fd3": [
       {
         "date": "2026-05-06",
         "impressions": 1,
