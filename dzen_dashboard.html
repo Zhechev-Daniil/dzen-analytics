@@ -519,8 +519,9 @@ function renderTop10(){
   const maxImpr=top[0]?.impressions||1;
   const rows=top.map((p,i)=>{
     const barW=Math.round((p.impressions/maxImpr)*180);
-    const link=p.id
-      ?`<a href="https://dzen.ru/a/${p.id}" target="_blank" title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</a>`
+    const pubUrl = p.link || (p.id ? `https://dzen.ru/a/${p.id}` : null);
+    const link=pubUrl
+      ?`<a href="${pubUrl}" target="_blank" title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</a>`
       :`<span title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</span>`;
     const num=(i+1).toString().padStart(2,'0');
     return `<tr>
@@ -623,8 +624,9 @@ function renderPubTable(){
   pubExpandData={};
   const rows=data.map((p,i)=>{
     pubExpandData[i]=p;
-    const titleHtml=p.id
-      ?`<a href="https://dzen.ru/a/${p.id}" target="_blank" title="${p.title}" onclick="event.stopPropagation()">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</a>`
+    const pubUrl = p.link || (p.id ? `https://dzen.ru/a/${p.id}` : null);
+    const titleHtml=pubUrl
+      ?`<a href="${pubUrl}" target="_blank" title="${p.title}" onclick="event.stopPropagation()">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</a>`
       :`<span title="${p.title}">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</span>`;
     const expandRow=`<tr class="pub-expand-row" id="exp-row-${i}">
       <td colspan="11" class="pub-expand-td">
