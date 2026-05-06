@@ -2,7 +2,7 @@ name: Daily Dzen Update
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # каждый день в 09:00 МСК (UTC+3)
+    - cron: '17 3 * * *'  # каждый день в 06:17 МСК (UTC+3)
   workflow_dispatch:       # ручной запуск через кнопку в GitHub Actions
 
 jobs:
