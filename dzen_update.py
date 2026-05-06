@@ -361,7 +361,6 @@ def main(data_json: str):
         "snapshot": snapshot_date,
         "id": p["id"], "title": p["title"], "type": p["type"], "pub_date": p["pub_date"],
         "link": p.get("link"),
-        "pub_keys": p.get("pub_keys"),
         "impressions": p["impressions"], "opens": p["page_views"],
         "deep_views": p["deep_views"], "video_views": p["type_specific_views"],
         "subscriptions": p["subscriptions"], "likes": p["likes"],

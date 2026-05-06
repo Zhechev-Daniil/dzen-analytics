@@ -39,14 +39,9 @@ async (publisherId) => {
 
   const pubs = stats.publications.map(p => {
     const s = p.stats || {}, pub = p.publication || {};
-    // Пытаемся найти публичный URL в разных полях которые может вернуть API
-    const link = pub.shareUrl || pub.publicationUrl || pub.publicUrl || pub.webUrl
-              || pub.pageUrl || pub.uri || pub.url || pub.link || pub.clickUrl
-              || pub.originalUrl || pub.articleUrl || null;
     return {
       title: pub.title, id: pub.publicationId, type: pub.publicationType,
-      link: link,
-      pub_keys: Object.keys(pub).join(','),  // отладка — какие поля вообще есть
+      link: pub.commonUrl || null,
       pub_date: new Date(pub.addTime).toISOString().substring(0,10),
       impressions: s.impressions||0, page_views: s.pageViews||0,
       deep_views: s.deepViews||0, type_specific_views: s.typeSpecificViews||0,
