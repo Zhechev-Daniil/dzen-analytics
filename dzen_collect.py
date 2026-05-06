@@ -41,7 +41,7 @@ async (publisherId) => {
     const s = p.stats || {}, pub = p.publication || {};
     return {
       title: pub.title, id: pub.publicationId, type: pub.publicationType,
-      link: pub.commonUrl || null,
+      link: pub.commonUrl ? (pub.commonUrl.startsWith('http') ? pub.commonUrl : 'https://dzen.ru' + pub.commonUrl) : null,
       pub_date: new Date(pub.addTime).toISOString().substring(0,10),
       impressions: s.impressions||0, page_views: s.pageViews||0,
       deep_views: s.deepViews||0, type_specific_views: s.typeSpecificViews||0,

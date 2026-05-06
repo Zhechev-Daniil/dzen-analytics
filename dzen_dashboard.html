@@ -519,7 +519,7 @@ function renderTop10(){
   const maxImpr=top[0]?.impressions||1;
   const rows=top.map((p,i)=>{
     const barW=Math.round((p.impressions/maxImpr)*180);
-    const pubUrl = p.link || (p.id ? `https://dzen.ru/a/${p.id}` : null);
+    const _raw = p.link; const pubUrl = _raw ? (_raw.startsWith('http') ? _raw : 'https://dzen.ru' + _raw) : (p.id ? `https://dzen.ru/a/${p.id}` : null);
     const link=pubUrl
       ?`<a href="${pubUrl}" target="_blank" title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</a>`
       :`<span title="${p.title}">${p.title.length>58?p.title.substring(0,58)+"…":p.title}</span>`;
@@ -624,7 +624,7 @@ function renderPubTable(){
   pubExpandData={};
   const rows=data.map((p,i)=>{
     pubExpandData[i]=p;
-    const pubUrl = p.link || (p.id ? `https://dzen.ru/a/${p.id}` : null);
+    const _raw = p.link; const pubUrl = _raw ? (_raw.startsWith('http') ? _raw : 'https://dzen.ru' + _raw) : (p.id ? `https://dzen.ru/a/${p.id}` : null);
     const titleHtml=pubUrl
       ?`<a href="${pubUrl}" target="_blank" title="${p.title}" onclick="event.stopPropagation()">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</a>`
       :`<span title="${p.title}">${p.title.length>50?p.title.substring(0,50)+"…":p.title}</span>`;
