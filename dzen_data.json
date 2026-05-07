@@ -27,7 +27,7 @@
       "type": "article",
       "pub_date": "2026-05-07",
       "link": "https://dzen.ru/a/afs1EEn31mdwfbK7",
-      "impressions": 25,
+      "impressions": 38,
       "opens": 2,
       "deep_views": 1,
       "video_views": 1,
@@ -46,7 +46,7 @@
       "type": "article",
       "pub_date": "2026-05-06",
       "link": "https://dzen.ru/a/afshYABg2X6BPygI",
-      "impressions": 6,
+      "impressions": 18,
       "opens": 3,
       "deep_views": 1,
       "video_views": 1,
@@ -84,7 +84,7 @@
       "type": "article",
       "pub_date": "2026-05-04",
       "link": "https://dzen.ru/a/afiWLhFy5VS5LTu-",
-      "impressions": 20,
+      "impressions": 21,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -93,7 +93,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 5,
+      "ctr": 4.76,
       "deep_rate": 0
     },
     {
@@ -540,7 +540,7 @@
       "type": "article",
       "pub_date": "2026-04-09",
       "link": "https://dzen.ru/a/adXZfUKCxVDVQ-Jz",
-      "impressions": 50,
+      "impressions": 51,
       "opens": 4,
       "deep_views": 1,
       "video_views": 1,
@@ -549,7 +549,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 1.5,
-      "ctr": 2,
+      "ctr": 1.96,
       "deep_rate": 25
     },
     {
@@ -913,7 +913,7 @@
     },
     {
       "date": "2026-05-06",
-      "impressions": 49,
+      "impressions": 76,
       "opens": 5,
       "deep_views": 1,
       "video_views": 1,
