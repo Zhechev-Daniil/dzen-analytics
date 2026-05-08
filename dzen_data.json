@@ -3,11 +3,30 @@
   "pubs": [
     {
       "snapshot": "2026-05-08",
-      "id": "69fd940056684d60c14fb228",
-      "title": "Perplexity как маркетинговый инструмент: 6 нестандартных применений, до которых никто не доходит",
+      "id": "69fdafce4004402c50ca4986",
+      "title": "5 вопросов, на которые бизнес должен ответить до того, как открыть чат с нейросетью",
       "type": "article",
       "pub_date": "2026-05-08",
-      "link": "https://dzen.ru/a/af2UAFZoTWDBT7Io",
+      "link": "https://dzen.ru/a/af2vzkAEQCxQykmG",
+      "impressions": 1,
+      "opens": 2,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fdab55bfc6ca73e626fb34",
+      "title": "Что произойдёт с твоим контентом, если добавить в цепочку агента-копирайтера",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2rVb_GynPmJvs0",
       "impressions": 2,
       "opens": 2,
       "deep_views": 0,
@@ -17,7 +36,83 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 50,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fda7a3c82a8d14f28b9254",
+      "title": "Маркетинг за 0 ₽: 6 ИИ-агентов на бесплатных ChatGPT и Perplexity",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2no8gqjRTyi5JU",
+      "impressions": 3,
+      "opens": 3,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fda61ce57b1778c5d05f99",
+      "title": "Tone of voice для ИИ: как заставить нейросеть писать твоим голосом, а не «средним голосом интернета»",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2mHOV7F3jF0F-Z",
+      "impressions": 4,
+      "opens": 2,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fd994956684d60c15742a5",
+      "title": "Маркетинговый паспорт бизнеса: один документ, который превращает любой ИИ в нормального копирайтера",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2ZSVZoTWDBV0Kl",
+      "impressions": 5,
+      "opens": 1,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fd940056684d60c14fb228",
+      "title": "Perplexity как маркетинговый инструмент: 6 нестандартных применений, до которых никто не доходит",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2UAFZoTWDBT7Io",
+      "impressions": 5,
+      "opens": 2,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 20,
       "deep_rate": 0
     },
     {
@@ -27,7 +122,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2MjWX1emZH5eX4",
-      "impressions": 2,
+      "impressions": 4,
       "opens": 1,
       "deep_views": 0,
       "video_views": 0,
@@ -46,7 +141,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2GylF-On7bM7_4",
-      "impressions": 2,
+      "impressions": 4,
       "opens": 4,
       "deep_views": 1,
       "video_views": 1,
@@ -65,7 +160,7 @@
       "type": "article",
       "pub_date": "2026-05-07",
       "link": "https://dzen.ru/a/afwoL5QU6TCKLP1Z",
-      "impressions": 5,
+      "impressions": 7,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -84,7 +179,7 @@
       "type": "article",
       "pub_date": "2026-05-07",
       "link": "https://dzen.ru/a/afs1EEn31mdwfbK7",
-      "impressions": 39,
+      "impressions": 41,
       "opens": 3,
       "deep_views": 1,
       "video_views": 1,
@@ -103,7 +198,7 @@
       "type": "article",
       "pub_date": "2026-05-06",
       "link": "https://dzen.ru/a/afshYABg2X6BPygI",
-      "impressions": 55,
+      "impressions": 60,
       "opens": 5,
       "deep_views": 1,
       "video_views": 1,
@@ -179,8 +274,8 @@
       "type": "gif",
       "pub_date": "2026-04-30",
       "link": "https://dzen.ru/video/watch/69f32f876c96204aceb32dbb",
-      "impressions": 27,
-      "opens": 15,
+      "impressions": 28,
+      "opens": 19,
       "deep_views": 6,
       "video_views": 8,
       "subscriptions": 0,
@@ -188,7 +283,7 @@
       "comments": 1,
       "shares": 0,
       "view_time": 0,
-      "ctr": 18.52,
+      "ctr": 17.86,
       "deep_rate": 75
     },
     {
@@ -426,7 +521,7 @@
       "type": "article",
       "pub_date": "2026-04-15",
       "link": "https://dzen.ru/a/ad4LhNaYJRpYpkrF",
-      "impressions": 76,
+      "impressions": 77,
       "opens": 14,
       "deep_views": 5,
       "video_views": 5,
@@ -435,7 +530,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 5.3,
-      "ctr": 1.32,
+      "ctr": 1.3,
       "deep_rate": 41.67
     },
     {
@@ -522,7 +617,7 @@
       "pub_date": "2026-04-12",
       "link": "https://dzen.ru/a/adjJ8euTEk9TMrYu",
       "impressions": 36,
-      "opens": 4,
+      "opens": 5,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -560,7 +655,7 @@
       "pub_date": "2026-04-11",
       "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 26,
-      "opens": 11,
+      "opens": 13,
       "deep_views": 3,
       "video_views": 3,
       "subscriptions": 0,
@@ -980,8 +1075,8 @@
     },
     {
       "date": "2026-05-07",
-      "impressions": 30,
-      "opens": 19,
+      "impressions": 63,
+      "opens": 36,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -1762,6 +1857,66 @@
         "impressions": 2,
         "opens": 4,
         "deep_views": 1,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fdafce4004402c50ca4986": [
+      {
+        "date": "2026-05-08",
+        "impressions": 1,
+        "opens": 2,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fdab55bfc6ca73e626fb34": [
+      {
+        "date": "2026-05-08",
+        "impressions": 2,
+        "opens": 2,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fda7a3c82a8d14f28b9254": [
+      {
+        "date": "2026-05-08",
+        "impressions": 3,
+        "opens": 3,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fda61ce57b1778c5d05f99": [
+      {
+        "date": "2026-05-08",
+        "impressions": 4,
+        "opens": 2,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fd994956684d60c15742a5": [
+      {
+        "date": "2026-05-08",
+        "impressions": 5,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69d8c9f1eb93124f5332b62e": [
+      {
+        "date": "2026-05-08",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
       }
