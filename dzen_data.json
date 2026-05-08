@@ -3,12 +3,50 @@
   "pubs": [
     {
       "snapshot": "2026-05-08",
+      "id": "69fdb79102c39929c4eb52f6",
+      "title": "6 ИИ-агентов за вечер. Зачем платить 54 тысячи, если можно не платить",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af23kQLDmSnE61L2",
+      "impressions": 1,
+      "opens": 1,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fdb21556684d60c17b5a38",
+      "title": "Как малый бизнес может работать с ИИ как крупная компания: система из 6 агентов, которая закрывает отдел маркетинга",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2yFVZoTWDBe1o4",
+      "impressions": 2,
+      "opens": 0,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
       "id": "69fdafce4004402c50ca4986",
       "title": "5 вопросов, на которые бизнес должен ответить до того, как открыть чат с нейросетью",
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2vzkAEQCxQykmG",
-      "impressions": 1,
+      "impressions": 2,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -27,7 +65,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2rVb_GynPmJvs0",
-      "impressions": 2,
+      "impressions": 3,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -46,7 +84,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2no8gqjRTyi5JU",
-      "impressions": 3,
+      "impressions": 4,
       "opens": 3,
       "deep_views": 0,
       "video_views": 0,
@@ -65,7 +103,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2mHOV7F3jF0F-Z",
-      "impressions": 4,
+      "impressions": 5,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -84,8 +122,8 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2ZSVZoTWDBV0Kl",
-      "impressions": 5,
-      "opens": 1,
+      "impressions": 6,
+      "opens": 2,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -103,7 +141,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2UAFZoTWDBT7Io",
-      "impressions": 5,
+      "impressions": 6,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -112,7 +150,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 20,
+      "ctr": 16.67,
       "deep_rate": 0
     },
     {
@@ -142,7 +180,7 @@
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2GylF-On7bM7_4",
       "impressions": 4,
-      "opens": 4,
+      "opens": 1,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -151,7 +189,7 @@
       "shares": 0,
       "view_time": 0,
       "ctr": 0,
-      "deep_rate": 25
+      "deep_rate": 50
     },
     {
       "snapshot": "2026-05-08",
@@ -198,7 +236,7 @@
       "type": "article",
       "pub_date": "2026-05-06",
       "link": "https://dzen.ru/a/afshYABg2X6BPygI",
-      "impressions": 60,
+      "impressions": 62,
       "opens": 5,
       "deep_views": 1,
       "video_views": 1,
@@ -275,7 +313,7 @@
       "pub_date": "2026-04-30",
       "link": "https://dzen.ru/video/watch/69f32f876c96204aceb32dbb",
       "impressions": 28,
-      "opens": 19,
+      "opens": 17,
       "deep_views": 6,
       "video_views": 8,
       "subscriptions": 0,
@@ -283,7 +321,7 @@
       "comments": 1,
       "shares": 0,
       "view_time": 0,
-      "ctr": 17.86,
+      "ctr": 14.29,
       "deep_rate": 75
     },
     {
@@ -655,7 +693,7 @@
       "pub_date": "2026-04-11",
       "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 26,
-      "opens": 13,
+      "opens": 14,
       "deep_views": 3,
       "video_views": 3,
       "subscriptions": 0,
@@ -664,7 +702,7 @@
       "shares": 0,
       "view_time": 1.2,
       "ctr": 3.85,
-      "deep_rate": 30
+      "deep_rate": 27.27
     },
     {
       "snapshot": "2026-05-08",
@@ -1075,8 +1113,8 @@
     },
     {
       "date": "2026-05-07",
-      "impressions": 63,
-      "opens": 36,
+      "impressions": 74,
+      "opens": 34,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -1916,6 +1954,26 @@
         "date": "2026-05-08",
         "impressions": 0,
         "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fdb79102c39929c4eb52f6": [
+      {
+        "date": "2026-05-08",
+        "impressions": 1,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fdb21556684d60c17b5a38": [
+      {
+        "date": "2026-05-08",
+        "impressions": 2,
+        "opens": 0,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
