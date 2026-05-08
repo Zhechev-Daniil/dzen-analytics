@@ -3,13 +3,70 @@
   "pubs": [
     {
       "snapshot": "2026-05-08",
+      "id": "69fd940056684d60c14fb228",
+      "title": "Perplexity как маркетинговый инструмент: 6 нестандартных применений, до которых никто не доходит",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2UAFZoTWDBT7Io",
+      "impressions": 2,
+      "opens": 2,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 50,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fd8c8d65f57a6647e5e5f8",
+      "title": "Анализ конкурентов за 15 минут: как ИИ-агент делает то, на что ты тратишь 5 часов",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2MjWX1emZH5eX4",
+      "impressions": 2,
+      "opens": 1,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-08",
+      "id": "69fd86ca517e3a7edb33bff8",
+      "title": "ИИ-агент против фрилансера: кому я теперь отдаю маркетинг – и где до сих пор плачу людям",
+      "type": "article",
+      "pub_date": "2026-05-08",
+      "link": "https://dzen.ru/a/af2GylF-On7bM7_4",
+      "impressions": 2,
+      "opens": 4,
+      "deep_views": 1,
+      "video_views": 1,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 25
+    },
+    {
+      "snapshot": "2026-05-08",
       "id": "69fc282f9414e9308a2cfd59",
       "title": "ChatGPT vs Perplexity: 6 маркетинговых агентов, которые закроют 80% рутины",
       "type": "article",
       "pub_date": "2026-05-07",
       "link": "https://dzen.ru/a/afwoL5QU6TCKLP1Z",
-      "impressions": 2,
-      "opens": 1,
+      "impressions": 5,
+      "opens": 2,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -27,7 +84,7 @@
       "type": "article",
       "pub_date": "2026-05-07",
       "link": "https://dzen.ru/a/afs1EEn31mdwfbK7",
-      "impressions": 37,
+      "impressions": 39,
       "opens": 3,
       "deep_views": 1,
       "video_views": 1,
@@ -46,7 +103,7 @@
       "type": "article",
       "pub_date": "2026-05-06",
       "link": "https://dzen.ru/a/afshYABg2X6BPygI",
-      "impressions": 48,
+      "impressions": 55,
       "opens": 5,
       "deep_views": 1,
       "video_views": 1,
@@ -65,7 +122,7 @@
       "type": "article",
       "pub_date": "2026-05-05",
       "link": "https://dzen.ru/a/afnGctsi4zPEpt4M",
-      "impressions": 8,
+      "impressions": 10,
       "opens": 3,
       "deep_views": 1,
       "video_views": 1,
@@ -122,8 +179,8 @@
       "type": "gif",
       "pub_date": "2026-04-30",
       "link": "https://dzen.ru/video/watch/69f32f876c96204aceb32dbb",
-      "impressions": 26,
-      "opens": 11,
+      "impressions": 27,
+      "opens": 15,
       "deep_views": 6,
       "video_views": 8,
       "subscriptions": 0,
@@ -131,7 +188,7 @@
       "comments": 1,
       "shares": 0,
       "view_time": 0,
-      "ctr": 11.54,
+      "ctr": 18.52,
       "deep_rate": 75
     },
     {
@@ -142,7 +199,7 @@
       "pub_date": "2026-04-20",
       "link": "https://dzen.ru/a/aeXilHIDaCkUlsez",
       "impressions": 105,
-      "opens": 12,
+      "opens": 13,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -151,7 +208,7 @@
       "shares": 0,
       "view_time": 0,
       "ctr": 5.71,
-      "deep_rate": 9.09
+      "deep_rate": 8.33
     },
     {
       "snapshot": "2026-05-08",
@@ -161,7 +218,7 @@
       "pub_date": "2026-04-19",
       "link": "https://dzen.ru/a/aeIcnKBJ10S7pmGD",
       "impressions": 84,
-      "opens": 8,
+      "opens": 9,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -170,7 +227,7 @@
       "shares": 0,
       "view_time": 0,
       "ctr": 2.38,
-      "deep_rate": 14.29
+      "deep_rate": 12.5
     },
     {
       "snapshot": "2026-05-08",
@@ -180,7 +237,7 @@
       "pub_date": "2026-04-18",
       "link": "https://dzen.ru/a/aeIR7QWI4G0RsP26",
       "impressions": 75,
-      "opens": 9,
+      "opens": 10,
       "deep_views": 2,
       "video_views": 2,
       "subscriptions": 0,
@@ -189,7 +246,7 @@
       "shares": 0,
       "view_time": 1.2,
       "ctr": 2.67,
-      "deep_rate": 28.57
+      "deep_rate": 25
     },
     {
       "snapshot": "2026-05-08",
@@ -370,7 +427,7 @@
       "pub_date": "2026-04-15",
       "link": "https://dzen.ru/a/ad4LhNaYJRpYpkrF",
       "impressions": 76,
-      "opens": 13,
+      "opens": 14,
       "deep_views": 5,
       "video_views": 5,
       "subscriptions": 1,
@@ -379,7 +436,7 @@
       "shares": 0,
       "view_time": 5.3,
       "ctr": 1.32,
-      "deep_rate": 45.45
+      "deep_rate": 41.67
     },
     {
       "snapshot": "2026-05-08",
@@ -503,7 +560,7 @@
       "pub_date": "2026-04-11",
       "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 26,
-      "opens": 10,
+      "opens": 11,
       "deep_views": 3,
       "video_views": 3,
       "subscriptions": 0,
@@ -512,7 +569,7 @@
       "shares": 0,
       "view_time": 1.2,
       "ctr": 3.85,
-      "deep_rate": 33.33
+      "deep_rate": 30
     },
     {
       "snapshot": "2026-05-08",
@@ -923,10 +980,10 @@
     },
     {
       "date": "2026-05-07",
-      "impressions": 9,
-      "opens": 2,
-      "deep_views": 0,
-      "video_views": 0,
+      "impressions": 30,
+      "opens": 19,
+      "deep_views": 1,
+      "video_views": 1,
       "subscriptions": 0,
       "likes": 0,
       "view_time": 0
@@ -1163,6 +1220,14 @@
         "deep_views": 4,
         "likes": 1,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
+        "impressions": 1,
+        "opens": 4,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69e5e294720368291496c7b3": [
@@ -1186,6 +1251,14 @@
         "date": "2026-05-07",
         "impressions": 2,
         "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
+        "impressions": 0,
+        "opens": 1,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
@@ -1215,6 +1288,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69e211ed0588e06d11b0fdba": [
@@ -1238,6 +1319,14 @@
         "date": "2026-05-07",
         "impressions": 1,
         "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
+        "impressions": 0,
+        "opens": 1,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
@@ -1337,6 +1426,14 @@
         "deep_views": 1,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
+        "impressions": 2,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69e1c258285d501373a07ff0": [
@@ -1378,6 +1475,14 @@
     "69d8a1f8dcf8776f14a5104f": [
       {
         "date": "2026-05-06",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
         "impressions": 0,
         "opens": 1,
         "deep_views": 0,
@@ -1593,6 +1698,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-08",
+        "impressions": 3,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69fb351049f7d667707db2bb": [
@@ -1619,6 +1732,36 @@
         "impressions": 1,
         "opens": 0,
         "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fd940056684d60c14fb228": [
+      {
+        "date": "2026-05-08",
+        "impressions": 2,
+        "opens": 2,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fd8c8d65f57a6647e5e5f8": [
+      {
+        "date": "2026-05-08",
+        "impressions": 2,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "69fd86ca517e3a7edb33bff8": [
+      {
+        "date": "2026-05-08",
+        "impressions": 2,
+        "opens": 4,
+        "deep_views": 1,
         "likes": 0,
         "subscriptions": 0
       }
