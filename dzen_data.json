@@ -3,12 +3,69 @@
   "pubs": [
     {
       "snapshot": "2026-05-12",
+      "id": "6a0319609e1e6a5143cf59f2",
+      "title": "Как заставить нейросеть писать твоим голосом",
+      "type": "article",
+      "pub_date": "2026-05-12",
+      "link": "https://dzen.ru/a/agMZYJ4ealFDz1ny",
+      "impressions": 0,
+      "opens": 1,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-12",
+      "id": "6a0316e9f7cd3124ebb7e2e5",
+      "title": "Система из 6 агентов, которая закрывает отдел маркетинга",
+      "type": "article",
+      "pub_date": "2026-05-12",
+      "link": "https://dzen.ru/a/agMW6ffNMSTrt-Ll",
+      "impressions": 1,
+      "opens": 2,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-12",
+      "id": "6a03133bbb2ab60cfd65824b",
+      "title": "Бизнес-бриф для нейросети",
+      "type": "article",
+      "pub_date": "2026-05-12",
+      "link": "https://dzen.ru/a/agMTO7sqtgz9ZYJL",
+      "impressions": 2,
+      "opens": 1,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-12",
       "id": "69fdb79102c39929c4eb52f6",
       "title": "6 ИИ-агентов за вечер. Зачем платить 54 тысячи, если можно не платить",
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af23kQLDmSnE61L2",
-      "impressions": 1,
+      "impressions": 3,
       "opens": 3,
       "deep_views": 0,
       "video_views": 0,
@@ -27,17 +84,17 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2yFVZoTWDBe1o4",
-      "impressions": 79,
-      "opens": 3,
-      "deep_views": 0,
-      "video_views": 0,
+      "impressions": 81,
+      "opens": 7,
+      "deep_views": 1,
+      "video_views": 1,
       "subscriptions": 0,
       "likes": 0,
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 0,
-      "deep_rate": 0
+      "ctr": 1.23,
+      "deep_rate": 33.33
     },
     {
       "snapshot": "2026-05-12",
@@ -46,7 +103,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2vzkAEQCxQykmG",
-      "impressions": 21,
+      "impressions": 22,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -65,7 +122,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2rVb_GynPmJvs0",
-      "impressions": 5,
+      "impressions": 6,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -84,7 +141,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2no8gqjRTyi5JU",
-      "impressions": 9,
+      "impressions": 10,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -103,17 +160,17 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2mHOV7F3jF0F-Z",
-      "impressions": 72,
-      "opens": 2,
-      "deep_views": 0,
-      "video_views": 0,
+      "impressions": 73,
+      "opens": 5,
+      "deep_views": 1,
+      "video_views": 1,
       "subscriptions": 0,
       "likes": 0,
       "comments": 0,
       "shares": 0,
       "view_time": 0,
-      "ctr": 0,
-      "deep_rate": 0
+      "ctr": 1.37,
+      "deep_rate": 33.33
     },
     {
       "snapshot": "2026-05-12",
@@ -122,7 +179,7 @@
       "type": "article",
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2ZSVZoTWDBV0Kl",
-      "impressions": 7,
+      "impressions": 8,
       "opens": 2,
       "deep_views": 0,
       "video_views": 0,
@@ -312,8 +369,8 @@
       "type": "gif",
       "pub_date": "2026-04-30",
       "link": "https://dzen.ru/video/watch/69f32f876c96204aceb32dbb",
-      "impressions": 30,
-      "opens": 14,
+      "impressions": 31,
+      "opens": 16,
       "deep_views": 7,
       "video_views": 9,
       "subscriptions": 0,
@@ -321,7 +378,7 @@
       "comments": 1,
       "shares": 0,
       "view_time": 0,
-      "ctr": 13.33,
+      "ctr": 12.9,
       "deep_rate": 77.78
     },
     {
@@ -332,7 +389,7 @@
       "pub_date": "2026-04-20",
       "link": "https://dzen.ru/a/aeXilHIDaCkUlsez",
       "impressions": 105,
-      "opens": 13,
+      "opens": 14,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -341,7 +398,7 @@
       "shares": 0,
       "view_time": 0,
       "ctr": 5.71,
-      "deep_rate": 8.33
+      "deep_rate": 7.69
     },
     {
       "snapshot": "2026-05-12",
@@ -559,7 +616,7 @@
       "type": "article",
       "pub_date": "2026-04-15",
       "link": "https://dzen.ru/a/ad4LhNaYJRpYpkrF",
-      "impressions": 114,
+      "impressions": 115,
       "opens": 14,
       "deep_views": 5,
       "video_views": 5,
@@ -568,7 +625,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 5.3,
-      "ctr": 0.88,
+      "ctr": 0.87,
       "deep_rate": 41.67
     },
     {
@@ -693,7 +750,7 @@
       "pub_date": "2026-04-11",
       "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 26,
-      "opens": 27,
+      "opens": 42,
       "deep_views": 5,
       "video_views": 5,
       "subscriptions": 0,
@@ -1143,10 +1200,10 @@
     },
     {
       "date": "2026-05-11",
-      "impressions": 25,
-      "opens": 15,
-      "deep_views": 1,
-      "video_views": 1,
+      "impressions": 39,
+      "opens": 44,
+      "deep_views": 3,
+      "video_views": 3,
       "subscriptions": 0,
       "likes": 0,
       "view_time": 0
@@ -1451,6 +1508,14 @@
       },
       {
         "date": "2026-05-08",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-12",
         "impressions": 0,
         "opens": 1,
         "deep_views": 0,
@@ -2152,6 +2217,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-12",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69fdab55bfc6ca73e626fb34": [
@@ -2170,6 +2243,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-12",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69fda7a3c82a8d14f28b9254": [
@@ -2184,6 +2265,14 @@
       {
         "date": "2026-05-09",
         "impressions": 5,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-12",
+        "impressions": 1,
         "opens": 0,
         "deep_views": 0,
         "likes": 0,
@@ -2243,6 +2332,14 @@
       },
       {
         "date": "2026-05-09",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-12",
         "impressions": 1,
         "opens": 0,
         "deep_views": 0,
@@ -2331,6 +2428,36 @@
         "date": "2026-05-12",
         "impressions": 6,
         "opens": 3,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a0319609e1e6a5143cf59f2": [
+      {
+        "date": "2026-05-12",
+        "impressions": 0,
+        "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a0316e9f7cd3124ebb7e2e5": [
+      {
+        "date": "2026-05-12",
+        "impressions": 1,
+        "opens": 2,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a03133bbb2ab60cfd65824b": [
+      {
+        "date": "2026-05-12",
+        "impressions": 2,
+        "opens": 1,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
