@@ -3,6 +3,101 @@
   "pubs": [
     {
       "snapshot": "2026-05-15",
+      "id": "6a0707b10343a536dffdea82",
+      "title": "Почему контент без стратегии – это деньги на ветер",
+      "type": "article",
+      "pub_date": "2026-05-15",
+      "link": "https://dzen.ru/a/agcHsQNDpTbf_eqC",
+      "impressions": 1,
+      "opens": 0,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-15",
+      "id": "6a0704b87a176c57a895a90d",
+      "title": "7 задач маркетолога, которые ИИ уже делает лучше человека",
+      "type": "article",
+      "pub_date": "2026-05-15",
+      "link": "https://dzen.ru/a/agcEuHoXbFeolakN",
+      "impressions": 1,
+      "opens": 0,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-15",
+      "id": "6a06ff7a208c506aa85cf677",
+      "title": "Позиционирование бренда за один сеанс с ИИ: реально ли это",
+      "type": "article",
+      "pub_date": "2026-05-15",
+      "link": "https://dzen.ru/a/agb_eiCMUGqoXPZ3",
+      "impressions": 1,
+      "opens": 0,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-15",
+      "id": "6a06f641ff82e6477e894d91",
+      "title": "Как ИИ помогает понять, чего на самом деле хочет ваша аудитория",
+      "type": "article",
+      "pub_date": "2026-05-15",
+      "link": "https://dzen.ru/a/agb2Qf-C5kd-iU2R",
+      "impressions": 1,
+      "opens": 0,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-15",
+      "id": "6a06ef26fdfa1c0b69d61fa5",
+      "title": "Что такое ИИ-ассистент – объясняю на пальцах, без технического жаргона",
+      "type": "article",
+      "pub_date": "2026-05-15",
+      "link": "https://dzen.ru/a/agbvJv36HAtp1h-l",
+      "impressions": 2,
+      "opens": 0,
+      "deep_views": 0,
+      "video_views": 0,
+      "subscriptions": 0,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "view_time": 0,
+      "ctr": 0,
+      "deep_rate": 0
+    },
+    {
+      "snapshot": "2026-05-15",
       "id": "6a05b121208c506aa806e020",
       "title": "ИИ-агенты уже работают. Вот как маркетологи экономят 10–15 часов в неделю",
       "type": "article",
@@ -560,7 +655,7 @@
       "pub_date": "2026-04-30",
       "link": "https://dzen.ru/video/watch/69f32f876c96204aceb32dbb",
       "impressions": 37,
-      "opens": 23,
+      "opens": 24,
       "deep_views": 7,
       "video_views": 11,
       "subscriptions": 0,
@@ -1390,8 +1485,8 @@
     },
     {
       "date": "2026-05-14",
-      "impressions": 11,
-      "opens": 11,
+      "impressions": 17,
+      "opens": 12,
       "deep_views": 2,
       "video_views": 2,
       "subscriptions": 0,
@@ -3562,6 +3657,56 @@
         "date": "2026-05-15",
         "impressions": 1,
         "opens": 1,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a0707b10343a536dffdea82": [
+      {
+        "date": "2026-05-15",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a0704b87a176c57a895a90d": [
+      {
+        "date": "2026-05-15",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a06ff7a208c506aa85cf677": [
+      {
+        "date": "2026-05-15",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a06f641ff82e6477e894d91": [
+      {
+        "date": "2026-05-15",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      }
+    ],
+    "6a06ef26fdfa1c0b69d61fa5": [
+      {
+        "date": "2026-05-15",
+        "impressions": 2,
+        "opens": 0,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
