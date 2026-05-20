@@ -465,7 +465,7 @@
       "pub_date": "2026-05-12",
       "link": "https://dzen.ru/a/agMTO7sqtgz9ZYJL",
       "impressions": 5,
-      "opens": 1,
+      "opens": 2,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -636,7 +636,7 @@
       "pub_date": "2026-05-08",
       "link": "https://dzen.ru/a/af2MjWX1emZH5eX4",
       "impressions": 6,
-      "opens": 2,
+      "opens": 7,
       "deep_views": 0,
       "video_views": 0,
       "subscriptions": 0,
@@ -1016,7 +1016,7 @@
       "pub_date": "2026-04-15",
       "link": "https://dzen.ru/a/ad4VW_7HZHy8OnkZ",
       "impressions": 18,
-      "opens": 5,
+      "opens": 8,
       "deep_views": 1,
       "video_views": 1,
       "subscriptions": 0,
@@ -1025,7 +1025,7 @@
       "shares": 0,
       "view_time": 0,
       "ctr": 0,
-      "deep_rate": 25
+      "deep_rate": 16.67
     },
     {
       "snapshot": "2026-05-20",
@@ -1168,16 +1168,16 @@
       "pub_date": "2026-04-11",
       "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 28,
-      "opens": 52,
-      "deep_views": 13,
-      "video_views": 13,
+      "opens": 69,
+      "deep_views": 14,
+      "video_views": 14,
       "subscriptions": 0,
       "likes": 2,
       "comments": 0,
       "shares": 0,
       "view_time": 16.4,
       "ctr": 3.57,
-      "deep_rate": 29.55
+      "deep_rate": 29.79
     },
     {
       "snapshot": "2026-05-20",
@@ -1619,9 +1619,9 @@
     {
       "date": "2026-05-19",
       "impressions": 4,
-      "opens": 0,
-      "deep_views": 0,
-      "video_views": 0,
+      "opens": 26,
+      "deep_views": 1,
+      "video_views": 1,
       "subscriptions": 0,
       "likes": 0,
       "view_time": 0
@@ -2557,6 +2557,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 0,
+        "opens": 17,
+        "deep_views": 1,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69d5d97d4282c550d543e273": [
@@ -2913,6 +2921,14 @@
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 0,
+        "opens": 3,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
       }
     ],
     "69ddd20a7406736c715c268b": [
@@ -3124,6 +3140,14 @@
         "date": "2026-05-14",
         "impressions": 1,
         "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 0,
+        "opens": 5,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
@@ -3772,6 +3796,14 @@
         "date": "2026-05-15",
         "impressions": 1,
         "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-20",
+        "impressions": 0,
+        "opens": 1,
         "deep_views": 0,
         "likes": 0,
         "subscriptions": 0
