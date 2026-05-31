@@ -27,7 +27,7 @@
       "type": "article",
       "pub_date": "2026-05-31",
       "link": "https://dzen.ru/a/ahlIx95C3wa3icOE",
-      "impressions": 3,
+      "impressions": 4,
       "opens": 1,
       "deep_views": 0,
       "video_views": 0,
@@ -331,7 +331,7 @@
       "type": "article",
       "pub_date": "2026-05-25",
       "link": "https://dzen.ru/a/ahQ-Ccwb-TEn1Odz",
-      "impressions": 683,
+      "impressions": 686,
       "opens": 28,
       "deep_views": 17,
       "video_views": 17,
@@ -340,7 +340,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 11.1,
-      "ctr": 3.51,
+      "ctr": 3.5,
       "deep_rate": 60.71
     },
     {
@@ -692,7 +692,7 @@
       "type": "article",
       "pub_date": "2026-05-18",
       "link": "https://dzen.ru/a/agr5YkwMsxSU9Dfl",
-      "impressions": 26,
+      "impressions": 27,
       "opens": 3,
       "deep_views": 2,
       "video_views": 2,
@@ -701,7 +701,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 4.3,
-      "ctr": 3.85,
+      "ctr": 3.7,
       "deep_rate": 66.67
     },
     {
@@ -1833,16 +1833,16 @@
       "pub_date": "2026-04-11",
       "link": "https://dzen.ru/a/adih-Nz4d28UpRBP",
       "impressions": 29,
-      "opens": 113,
-      "deep_views": 33,
-      "video_views": 33,
+      "opens": 114,
+      "deep_views": 34,
+      "video_views": 34,
       "subscriptions": 0,
       "likes": 2,
       "comments": 0,
       "shares": 0,
       "view_time": 39.9,
       "ctr": 3.45,
-      "deep_rate": 33.33
+      "deep_rate": 34
     },
     {
       "snapshot": "2026-05-31",
@@ -2245,10 +2245,10 @@
     },
     {
       "date": "2026-05-30",
-      "impressions": 75,
-      "opens": 15,
-      "deep_views": 6,
-      "video_views": 7,
+      "impressions": 80,
+      "opens": 16,
+      "deep_views": 7,
+      "video_views": 8,
       "subscriptions": 0,
       "likes": 0,
       "view_time": 0
@@ -6415,6 +6415,14 @@
       },
       {
         "date": "2026-05-30",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-05-31",
         "impressions": 1,
         "opens": 0,
         "deep_views": 0,
