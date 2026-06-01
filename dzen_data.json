@@ -218,7 +218,7 @@
       "pub_date": "2026-05-27",
       "link": "https://dzen.ru/a/ahbekXB-cUrZfaFJ",
       "impressions": 65,
-      "opens": 11,
+      "opens": 10,
       "deep_views": 3,
       "video_views": 3,
       "subscriptions": 1,
@@ -692,7 +692,7 @@
       "type": "article",
       "pub_date": "2026-05-18",
       "link": "https://dzen.ru/a/agr5YkwMsxSU9Dfl",
-      "impressions": 27,
+      "impressions": 28,
       "opens": 3,
       "deep_views": 2,
       "video_views": 2,
@@ -701,7 +701,7 @@
       "comments": 0,
       "shares": 0,
       "view_time": 4.3,
-      "ctr": 3.7,
+      "ctr": 3.57,
       "deep_rate": 66.67
     },
     {
@@ -2245,8 +2245,8 @@
     },
     {
       "date": "2026-05-31",
-      "impressions": 106,
-      "opens": 24,
+      "impressions": 107,
+      "opens": 23,
       "deep_views": 11,
       "video_views": 11,
       "subscriptions": 0,
@@ -2255,11 +2255,6 @@
     }
   ],
   "subs": [
-    {
-      "date": "2026-04-27",
-      "subscribers": 23,
-      "diff": 0
-    },
     {
       "date": "2026-04-28",
       "subscribers": 23,
@@ -2427,6 +2422,11 @@
     },
     {
       "date": "2026-05-31",
+      "subscribers": 27,
+      "diff": 0
+    },
+    {
+      "date": "2026-06-01",
       "subscribers": 27,
       "diff": 0
     }
@@ -6479,6 +6479,14 @@
       },
       {
         "date": "2026-05-31",
+        "impressions": 1,
+        "opens": 0,
+        "deep_views": 0,
+        "likes": 0,
+        "subscriptions": 0
+      },
+      {
+        "date": "2026-06-01",
         "impressions": 1,
         "opens": 0,
         "deep_views": 0,
